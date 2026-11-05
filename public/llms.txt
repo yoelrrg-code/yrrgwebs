@@ -1,0 +1,20 @@
+# YRRG.ai — Smart Website System para Latinoamérica
+
+> YRRG.ai diseña, migra y mantiene sitios web ultrarrápidos en Next.js (100/100 PageSpeed) gestionados 100% por WhatsApp y correo electrónico en menos de 30 minutos.
+
+## Servicios Principales
+- [Smart Websites en Next.js](https://yrrg.ai/servicios/smart-website): Desarrollo web a medida en Next.js, React y Tailwind CSS orientado a conversión B2B y PyMEs.
+- [Migración sin Dolor](https://yrrg.ai/servicios/migracion): Migración de WordPress, Wix o Webflow a Next.js sin tiempo de inactividad ni pérdida de posicionamiento SEO.
+- [Optimización Extrema & Core Web Vitals](https://yrrg.ai/servicios/optimizacion): Velocidad sub-segundo (< 0.4s LCP) y puntaje 98–100 en Google PageSpeed Insights.
+- [AI SEO & Buscadores IA](https://yrrg.ai/servicios/ai-seo): Optimización semántica JSON-LD y llms.txt para aparecer en Google, ChatGPT, Perplexity, Claude y Gemini.
+- [Mantenimiento Blindado 24/7](https://yrrg.ai/servicios/mantenimiento): Hosting global Edge, seguridad inmutable y cambios ilimitados pedidos por WhatsApp con entrega en Preview en menos de 30 minutos.
+
+## Soluciones por Tipo de Organización
+- [PyMEs y Negocios en Crecimiento](https://yrrg.ai/soluciones/pymes)
+- [Empresas y Corporativos (Enterprise)](https://yrrg.ai/soluciones/enterprise)
+- [ONGs, Fundaciones y Cámaras Empresariales](https://yrrg.ai/soluciones/fundaciones)
+
+## Precios Transparentes
+- Setup / Migración Inicial: $299 USD (Pago único)
+- Suscripción Mensual Todo Incluido: $59 USD/mes ($49 USD/mes con pago anual)
+- Plan Corporate & Custom: A medida
