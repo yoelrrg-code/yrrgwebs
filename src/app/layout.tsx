@@ -52,7 +52,7 @@ export default function RootLayout({
       lang="es"
       className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
     >
-      <body className="min-h-screen bg-[#090D16] font-sans text-[#F9FAFB] antialiased selection:bg-[#10B981] selection:text-[#090D16]">
+      <body className="min-h-screen bg-[#070d14] font-sans text-[#f7fafc] antialiased selection:bg-[#00b231] selection:text-[#070d14]">
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>

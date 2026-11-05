@@ -14,24 +14,24 @@ export function FaqAccordion() {
         return (
           <div
             key={faq.question}
-            className="overflow-hidden rounded-2xl border border-[#1F2937] bg-[#111827]/80 transition-colors hover:border-[#10B981]/40"
+            className="overflow-hidden rounded-2xl border border-[#1b2a3d] bg-[#0e1724]/80 transition-colors hover:border-[#00b231]/40"
           >
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : idx)}
               className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
             >
-              <span className="font-heading text-base font-semibold text-[#F9FAFB] sm:text-lg">
+              <span className="font-heading text-base font-semibold text-[#f7fafc] sm:text-lg">
                 {faq.question}
               </span>
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-[#10B981] transition-transform duration-200 ${
+                className={`h-5 w-5 shrink-0 text-[#00b231] transition-transform duration-200 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
             {isOpen && (
-              <div className="border-t border-[#1F2937]/70 px-6 pb-5 pt-4 text-sm leading-relaxed text-[#9CA3AF] sm:text-base">
+              <div className="border-t border-[#1b2a3d]/70 px-6 pb-5 pt-4 text-sm leading-relaxed text-[#94a6b8] sm:text-base">
                 {faq.answer}
               </div>
             )}

@@ -14,8 +14,8 @@ export function Logo({ className = "", showSubtitle = false }: LogoProps) {
       aria-label="YRRG.ai Inicio"
     >
       {/* Rounded square with emerald-to-indigo gradient containing >_ + bolt */}
-      <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#10B981] via-[#059669] to-[#6366F1] p-[1px] shadow-lg shadow-emerald-500/20 transition-transform duration-200 group-hover:scale-105">
-        <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-[#090D16]/90 backdrop-blur-sm">
+      <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b231] via-[#008f27] to-[#2fa4e3] p-[1px] shadow-lg shadow-[#00b231]/20 transition-transform duration-200 group-hover:scale-105">
+        <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-[#070d14]/90 backdrop-blur-sm">
           <svg
             width="24"
             height="24"
@@ -32,14 +32,14 @@ export function Logo({ className = "", showSubtitle = false }: LogoProps) {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#10B981" />
-                <stop offset="100%" stopColor="#6366F1" />
+                <stop offset="0%" stopColor="#00b231" />
+                <stop offset="100%" stopColor="#2fa4e3" />
               </linearGradient>
             </defs>
             {/* Terminal prompt chevron > */}
             <path
               d="M4.5 7.5L9.5 12L4.5 16.5"
-              stroke="#10B981"
+              stroke="#00b231"
               strokeWidth="2.4"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -47,7 +47,7 @@ export function Logo({ className = "", showSubtitle = false }: LogoProps) {
             {/* Terminal underscore _ */}
             <path
               d="M10.5 16.5H13.5"
-              stroke="#6366F1"
+              stroke="#2fa4e3"
               strokeWidth="2.4"
               strokeLinecap="round"
             />
@@ -61,12 +61,12 @@ export function Logo({ className = "", showSubtitle = false }: LogoProps) {
       </div>
 
       <div className="flex flex-col">
-        <div className="flex items-baseline font-heading text-xl font-extrabold tracking-tight text-[#F9FAFB]">
+        <div className="flex items-baseline font-heading text-xl font-extrabold tracking-tight text-[#f7fafc]">
           <span>YRRG</span>
-          <span className="text-[#10B981]">.ai</span>
+          <span className="text-[#00b231]">.ai</span>
         </div>
         {showSubtitle && (
-          <span className="font-mono text-[10px] uppercase tracking-widest text-[#9CA3AF]">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-[#94a6b8]">
             Smart Website System
           </span>
         )}

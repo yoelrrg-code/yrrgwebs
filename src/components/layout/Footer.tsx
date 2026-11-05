@@ -6,25 +6,25 @@ import { ArrowUpRight, Mail, MessageSquare } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#1F2937] bg-[#090D16] text-[#9CA3AF]">
+    <footer className="border-t border-[#1b2a3d] bg-[#070d14] text-[#94a6b8]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Logo showSubtitle />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#9CA3AF]">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#94a6b8]">
               Creamos, migramos y mantenemos sitios web ultrarrápidos en Next.js
               para empresas en toda Latinoamérica. Sin paneles complejos: pides
               cambios por WhatsApp y están listos en minutos.
             </p>
 
             {/* Operational Status Badge */}
-            <div className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-[#1F2937] bg-[#111827] px-3.5 py-1.5">
+            <div className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-[#1b2a3d] bg-[#0e1724] px-3.5 py-1.5">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#10B981] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#10B981]" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00b231] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00b231]" />
               </span>
-              <span className="font-mono text-xs text-[#F9FAFB]">
+              <span className="font-mono text-xs text-[#f7fafc]">
                 {SITE_CONFIG.statusText}
               </span>
             </div>
@@ -34,7 +34,7 @@ export function Footer() {
                 href={SITE_CONFIG.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[#10B981] hover:underline"
+                className="inline-flex items-center gap-1.5 text-[#00b231] hover:underline"
               >
                 <MessageSquare className="h-4 w-4" />
                 <span>WhatsApp Directo</span>
@@ -42,7 +42,7 @@ export function Footer() {
               </a>
               <a
                 href={`mailto:${SITE_CONFIG.contactEmail}`}
-                className="inline-flex items-center gap-1.5 text-[#9CA3AF] hover:text-[#F9FAFB]"
+                className="inline-flex items-center gap-1.5 text-[#94a6b8] hover:text-[#f7fafc]"
               >
                 <Mail className="h-4 w-4" />
                 <span>{SITE_CONFIG.contactEmail}</span>
@@ -52,14 +52,14 @@ export function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#F9FAFB]">
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#f7fafc]">
               Servicios
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
                   href="/servicios"
-                  className="transition-colors hover:text-[#10B981]"
+                  className="transition-colors hover:text-[#00b231]"
                 >
                   Visión General
                 </Link>
@@ -68,7 +68,7 @@ export function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={`/servicios/${service.slug}`}
-                    className="transition-colors hover:text-[#10B981]"
+                    className="transition-colors hover:text-[#00b231]"
                   >
                     {service.shortTitle}
                   </Link>
@@ -79,7 +79,7 @@ export function Footer() {
 
           {/* Segments Column */}
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#F9FAFB]">
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#f7fafc]">
               Para quién es
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -87,7 +87,7 @@ export function Footer() {
                 <li key={seg.slug}>
                   <Link
                     href={`/soluciones/${seg.slug}`}
-                    className="transition-colors hover:text-[#10B981]"
+                    className="transition-colors hover:text-[#00b231]"
                   >
                     {seg.shortTitle}
                   </Link>
@@ -96,7 +96,7 @@ export function Footer() {
               <li className="pt-2">
                 <Link
                   href="/clientes"
-                  className="transition-colors hover:text-[#10B981]"
+                  className="transition-colors hover:text-[#00b231]"
                 >
                   Casos de Éxito
                 </Link>
@@ -104,7 +104,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/precios"
-                  className="transition-colors hover:text-[#10B981]"
+                  className="transition-colors hover:text-[#00b231]"
                 >
                   Planes y Precios
                 </Link>
@@ -114,14 +114,14 @@ export function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#F9FAFB]">
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#f7fafc]">
               Compañía
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
                   href="/como-funciona"
-                  className="transition-colors hover:text-[#10B981]"
+                  className="transition-colors hover:text-[#00b231]"
                 >
                   Cómo funciona
                 </Link>
@@ -129,7 +129,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/nosotros"
-                  className="transition-colors hover:text-[#10B981]"
+                  className="transition-colors hover:text-[#00b231]"
                 >
                   Sobre YRRG.ai
                 </Link>
@@ -137,7 +137,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="transition-colors hover:text-[#10B981]"
+                  className="transition-colors hover:text-[#00b231]"
                 >
                   Blog & Recursos IA
                 </Link>
@@ -145,7 +145,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contacto"
-                  className="transition-colors hover:text-[#10B981]"
+                  className="transition-colors hover:text-[#00b231]"
                 >
                   Agendar Llamada
                 </Link>
@@ -154,14 +154,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#1F2937] pt-8 text-xs sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#1b2a3d] pt-8 text-xs sm:flex-row">
           <p>
             © {new Date().getFullYear()} YRRG.ai — Smart Website System. Todos
             los derechos reservados.
           </p>
           <div className="flex items-center gap-6 font-mono">
             <span>Next.js 15 Architecture</span>
-            <span className="text-[#10B981]">PageSpeed 100/100</span>
+            <span className="text-[#00b231]">PageSpeed 100/100</span>
             <span>AI SEO Native</span>
           </div>
         </div>

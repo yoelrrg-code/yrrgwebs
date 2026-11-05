@@ -33,33 +33,33 @@ export default function ContactoPage() {
   )}`;
 
   return (
-    <div className="bg-[#090D16] py-16 sm:py-24">
+    <div className="bg-[#070d14] py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           {/* Left Column: Info & Direct Channels */}
           <div className="lg:col-span-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#10B981]/30 bg-[#10B981]/10 px-3 py-1 font-mono text-xs font-semibold text-[#10B981]">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/30 bg-[#00b231]/10 px-3 py-1 font-mono text-xs font-semibold text-[#00b231]">
               <Sparkles className="h-3.5 w-3.5" />
               Paso 01 • Charla de 45 minutos
             </span>
-            <h1 className="mt-4 font-heading text-3xl font-extrabold text-[#F9FAFB] sm:text-4xl">
+            <h1 className="mt-4 font-heading text-3xl font-extrabold text-[#f7fafc] sm:text-4xl">
               Empecemos tu nuevo Smart Website
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-[#9CA3AF]">
+            <p className="mt-4 text-base leading-relaxed text-[#94a6b8]">
               Completa tus datos para coordinar nuestra videollamada inicial de
               45 minutos o escríbenos directamente por WhatsApp si prefieres
               avanzar al instante.
             </p>
 
             <div className="mt-8 space-y-4">
-              <div className="rounded-2xl border border-[#1F2937] bg-[#111827] p-5">
+              <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-5">
                 <div className="flex items-center gap-3">
-                  <MessageSquare className="h-5 w-5 text-[#10B981]" />
-                  <div className="font-heading text-sm font-bold text-[#F9FAFB]">
+                  <MessageSquare className="h-5 w-5 text-[#00b231]" />
+                  <div className="font-heading text-sm font-bold text-[#f7fafc]">
                     Canal Rápido por WhatsApp
                   </div>
                 </div>
-                <p className="mt-1.5 text-xs text-[#9CA3AF]">
+                <p className="mt-1.5 text-xs text-[#94a6b8]">
                   Respuesta inmediata de nuestro equipo para resolver dudas o
                   agendar tu reunión.
                 </p>
@@ -67,38 +67,38 @@ export default function ContactoPage() {
                   href={SITE_CONFIG.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-[#10B981] hover:underline"
+                  className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-[#00b231] hover:underline"
                 >
                   <span>Abrir chat en WhatsApp →</span>
                 </a>
               </div>
 
-              <div className="rounded-2xl border border-[#1F2937] bg-[#111827] p-5">
+              <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-5">
                 <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-[#6366F1]" />
-                  <div className="font-heading text-sm font-bold text-[#F9FAFB]">
+                  <Mail className="h-5 w-5 text-[#2fa4e3]" />
+                  <div className="font-heading text-sm font-bold text-[#f7fafc]">
                     Correo Corporativo
                   </div>
                 </div>
-                <p className="mt-1.5 text-xs text-[#9CA3AF]">
+                <p className="mt-1.5 text-xs text-[#94a6b8]">
                   {SITE_CONFIG.contactEmail}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-[#1F2937] bg-[#111827] p-5">
+              <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-5">
                 <div className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-[#10B981]" />
-                  <div className="font-heading text-sm font-bold text-[#F9FAFB]">
+                  <Clock className="h-5 w-5 text-[#00b231]" />
+                  <div className="font-heading text-sm font-bold text-[#f7fafc]">
                     Resumen de Inversión
                   </div>
                 </div>
-                <p className="mt-1.5 text-xs text-[#9CA3AF]">
+                <p className="mt-1.5 text-xs text-[#94a6b8]">
                   Setup único de{" "}
-                  <strong className="text-[#F9FAFB]">
+                  <strong className="text-[#f7fafc]">
                     ${PRICING_DATA.setupFee} USD
                   </strong>{" "}
                   + Suscripción todo incluido de{" "}
-                  <strong className="text-[#10B981]">
+                  <strong className="text-[#00b231]">
                     ${PRICING_DATA.monthlyFee} USD/mes
                   </strong>
                   .
@@ -108,16 +108,16 @@ export default function ContactoPage() {
           </div>
 
           {/* Right Column: Interactive Onboarding Form */}
-          <div className="rounded-3xl border border-[#1F2937] bg-[#111827] p-6 sm:p-10 lg:col-span-3">
+          <div className="rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 sm:p-10 lg:col-span-3">
             {submitted ? (
               <div className="py-12 text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#10B981]/20 text-[#10B981]">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#00b231]/20 text-[#00b231]">
                   <CheckCircle2 className="h-9 w-9" />
                 </div>
-                <h2 className="mt-5 font-heading text-2xl font-bold text-[#F9FAFB]">
+                <h2 className="mt-5 font-heading text-2xl font-bold text-[#f7fafc]">
                   ¡Solicitud recibida, {name}!
                 </h2>
-                <p className="mx-auto mt-3 max-w-md text-sm text-[#9CA3AF]">
+                <p className="mx-auto mt-3 max-w-md text-sm text-[#94a6b8]">
                   Ya preparamos tu ficha inicial. Si quieres acelerar aún más la
                   coordinación de horario, haz clic abajo para enviarnos tu
                   resumen directo por WhatsApp:
@@ -127,7 +127,7 @@ export default function ContactoPage() {
                     href={whatsappDirectUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#10B981] px-6 py-3.5 text-sm font-bold text-[#090D16] hover:bg-[#059669] hover:text-[#F9FAFB]"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#00b231] px-6 py-3.5 text-sm font-bold text-[#070d14] hover:bg-[#008f27] hover:text-[#f7fafc]"
                   >
                     <MessageSquare className="h-4 w-4" />
                     <span>Confirmar horario por WhatsApp</span>
@@ -135,7 +135,7 @@ export default function ContactoPage() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="rounded-xl border border-[#1F2937] bg-[#090D16] px-5 py-3.5 text-xs font-semibold text-[#9CA3AF] hover:text-[#F9FAFB]"
+                    className="rounded-xl border border-[#1b2a3d] bg-[#070d14] px-5 py-3.5 text-xs font-semibold text-[#94a6b8] hover:text-[#f7fafc]"
                   >
                     Editar datos
                   </button>
@@ -143,13 +143,13 @@ export default function ContactoPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <h2 className="font-heading text-xl font-bold text-[#F9FAFB]">
+                <h2 className="font-heading text-xl font-bold text-[#f7fafc]">
                   Solicitar reunión de descubrimiento o propuesta
                 </h2>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#9CA3AF]">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                       Tu Nombre *
                     </label>
                     <input
@@ -158,12 +158,12 @@ export default function ContactoPage() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Ej. Martín Morales"
-                      className="mt-2 w-full rounded-xl border border-[#1F2937] bg-[#090D16] px-4 py-3 text-sm text-[#F9FAFB] placeholder-[#9CA3AF]/50 focus:border-[#10B981] focus:outline-none"
+                      className="mt-2 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-3 text-sm text-[#f7fafc] placeholder-[#94a6b8]/50 focus:border-[#00b231] focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#9CA3AF]">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                       Empresa u Organización *
                     </label>
                     <input
@@ -172,14 +172,14 @@ export default function ContactoPage() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="Ej. Grupo Andino S.A."
-                      className="mt-2 w-full rounded-xl border border-[#1F2937] bg-[#090D16] px-4 py-3 text-sm text-[#F9FAFB] placeholder-[#9CA3AF]/50 focus:border-[#10B981] focus:outline-none"
+                      className="mt-2 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-3 text-sm text-[#f7fafc] placeholder-[#94a6b8]/50 focus:border-[#00b231] focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#9CA3AF]">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                       Sitio web actual (Opcional)
                     </label>
                     <input
@@ -187,18 +187,18 @@ export default function ContactoPage() {
                       value={website}
                       onChange={(e) => setWebsite(e.target.value)}
                       placeholder="https://tuempresa.com"
-                      className="mt-2 w-full rounded-xl border border-[#1F2937] bg-[#090D16] px-4 py-3 text-sm text-[#F9FAFB] placeholder-[#9CA3AF]/50 focus:border-[#10B981] focus:outline-none"
+                      className="mt-2 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-3 text-sm text-[#f7fafc] placeholder-[#94a6b8]/50 focus:border-[#00b231] focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#9CA3AF]">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                       ¿Qué necesitas lograr?
                     </label>
                     <select
                       value={goal}
                       onChange={(e) => setGoal(e.target.value)}
-                      className="mt-2 w-full rounded-xl border border-[#1F2937] bg-[#090D16] px-4 py-3 text-sm text-[#F9FAFB] focus:border-[#10B981] focus:outline-none"
+                      className="mt-2 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-3 text-sm text-[#f7fafc] focus:border-[#00b231] focus:outline-none"
                     >
                       <option value="Crear un nuevo Smart Website">
                         Crear un nuevo Smart Website desde cero
@@ -217,7 +217,7 @@ export default function ContactoPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#9CA3AF]">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                     Cuéntanos brevemente sobre tu negocio o proyecto
                   </label>
                   <textarea
@@ -225,14 +225,14 @@ export default function ContactoPage() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="¿A qué se dedica tu empresa y qué te gustaría mejorar de tu presencia digital actual?"
-                    className="mt-2 w-full rounded-xl border border-[#1F2937] bg-[#090D16] px-4 py-3 text-sm text-[#F9FAFB] placeholder-[#9CA3AF]/50 focus:border-[#10B981] focus:outline-none"
+                    className="mt-2 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-3 text-sm text-[#f7fafc] placeholder-[#94a6b8]/50 focus:border-[#00b231] focus:outline-none"
                   />
                 </div>
 
                 <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                   <button
                     type="submit"
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#10B981] px-6 py-4 text-sm font-bold text-[#090D16] transition-colors hover:bg-[#059669] hover:text-[#F9FAFB]"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#00b231] px-6 py-4 text-sm font-bold text-[#070d14] transition-colors hover:bg-[#008f27] hover:text-[#f7fafc]"
                   >
                     <Send className="h-4 w-4" />
                     <span>Agendar charla de 45 min</span>
@@ -242,9 +242,9 @@ export default function ContactoPage() {
                     href={whatsappDirectUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#1F2937] bg-[#090D16] px-6 py-4 text-sm font-semibold text-[#F9FAFB] hover:border-[#10B981]"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-6 py-4 text-sm font-semibold text-[#f7fafc] hover:border-[#00b231]"
                   >
-                    <MessageSquare className="h-4 w-4 text-[#10B981]" />
+                    <MessageSquare className="h-4 w-4 text-[#00b231]" />
                     <span>Enviar directo por WhatsApp</span>
                   </a>
                 </div>

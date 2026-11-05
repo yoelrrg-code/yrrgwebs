@@ -9,16 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "#090D16",
-        slateSurface: "#111827",
-        steelBorder: "#1F2937",
+        obsidian: "#070d14",
+        slateSurface: "#0e1724",
+        steelBorder: "#1b2a3d",
         emeraldAccent: {
-          DEFAULT: "#10B981",
-          hover: "#059669",
+          DEFAULT: "#00b231",
+          hover: "#008f27",
+          light: "#33cf5e",
         },
-        indigoAccent: "#6366F1",
-        snow: "#F9FAFB",
-        coolGray: "#9CA3AF",
+        indigoAccent: {
+          DEFAULT: "#2fa4e3",
+          hover: "#1e88c2",
+        },
+        snow: "#f7fafc",
+        coolGray: "#94a6b8",
       },
       fontFamily: {
         heading: ["var(--font-jakarta)", "sans-serif"],
@@ -27,7 +31,7 @@ const config: Config = {
       },
       backgroundImage: {
         "radial-glow":
-          "radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.14) 0%, rgba(99, 102, 241, 0.08) 40%, rgba(9, 13, 22, 0) 75%)",
+          "radial-gradient(circle at 50% 0%, rgba(0, 178, 49, 0.15) 0%, rgba(47, 164, 227, 0.10) 40%, rgba(7, 13, 20, 0) 75%)",
       },
     },
   },
