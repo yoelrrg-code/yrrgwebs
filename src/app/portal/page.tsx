@@ -21,6 +21,11 @@ import {
   User,
   Wrench,
 } from "lucide-react";
+import {
+  ScrollReveal,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/motion/ScrollReveal";
 import type {
   ProjectRecord,
   TicketMessageRecord,
@@ -325,155 +330,161 @@ export default function ClientPortalPage() {
         )}
 
         {/* Top Portal Header */}
-        <div className="flex flex-col justify-between gap-4 rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 sm:flex-row sm:items-center">
-          <div>
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/40 bg-[#00b231]/10 px-3 py-1 font-mono text-xs font-semibold text-[#00b231]">
-                <Database className="h-3.5 w-3.5" />
-                {storageMode === "mysql"
-                  ? "● Conectado a MySQL (yrrgwebs)"
-                  : "● Modo Demo Cloud (In-Memory)"}
-              </span>
-              <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-3 py-1 font-mono text-xs text-[#94a6b8]">
-                Empresa: <strong className="text-[#f7fafc]">{user?.company}</strong>
-              </span>
+        <ScrollReveal variant="fade-down">
+          <div className="flex flex-col justify-between gap-4 rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 sm:flex-row sm:items-center">
+            <div>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/40 bg-[#00b231]/10 px-3 py-1 font-mono text-xs font-semibold text-[#00b231]">
+                  <Database className="h-3.5 w-3.5" />
+                  {storageMode === "mysql"
+                    ? "● Conectado a MySQL (yrrgwebs)"
+                    : "● Modo Demo Cloud (In-Memory)"}
+                </span>
+                <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-3 py-1 font-mono text-xs text-[#94a6b8]">
+                  Empresa: <strong className="text-[#f7fafc]">{user?.company}</strong>
+                </span>
+              </div>
+              <h1 className="mt-3 font-heading text-2xl font-extrabold text-[#f7fafc] sm:text-3xl">
+                Hola, {user?.name}
+              </h1>
+              <p className="mt-1 text-xs text-[#94a6b8] sm:text-sm">
+                Panel de Proyectos Web, Solicitudes de Cambio y Aprobación de
+                Vistas Previas en 1 Clic.
+              </p>
             </div>
-            <h1 className="mt-3 font-heading text-2xl font-extrabold text-[#f7fafc] sm:text-3xl">
-              Hola, {user?.name}
-            </h1>
-            <p className="mt-1 text-xs text-[#94a6b8] sm:text-sm">
-              Panel de Proyectos Web, Solicitudes de Cambio y Aprobación de
-              Vistas Previas en 1 Clic.
-            </p>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setShowNewProjectModal(true)}
+                className="inline-flex items-center gap-2 rounded-xl border border-[#2fa4e3]/50 bg-[#2fa4e3]/10 px-4 py-2.5 text-xs font-bold text-[#2fa4e3] transition-colors hover:bg-[#2fa4e3] hover:text-[#070d14]"
+              >
+                <Calendar className="h-4 w-4" />
+                <span>+ Nuevo Sitio Web / Charla 45 min</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setShowNewTicketModal(true)}
+                className="inline-flex items-center gap-2 rounded-xl bg-[#00b231] px-4 py-2.5 text-xs font-bold text-[#070d14] transition-colors hover:bg-[#008f27] hover:text-[#f7fafc]"
+              >
+                <Plus className="h-4 w-4" />
+                <span>Nuevo Ticket de Cambio</span>
+              </button>
+
+              <Link
+                href="/admin"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3.5 py-2.5 text-xs font-semibold text-[#94a6b8] hover:border-[#2fa4e3] hover:text-[#f7fafc]"
+              >
+                <ShieldCheck className="h-4 w-4 text-[#2fa4e3]" />
+                <span>Vista Admin</span>
+              </Link>
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3.5 py-2.5 text-xs font-semibold text-[#94a6b8] hover:border-red-500/50 hover:text-red-300"
+              >
+                <LogOut className="h-4 w-4" />
+                <span>Salir</span>
+              </button>
+            </div>
           </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setShowNewProjectModal(true)}
-              className="inline-flex items-center gap-2 rounded-xl border border-[#2fa4e3]/50 bg-[#2fa4e3]/10 px-4 py-2.5 text-xs font-bold text-[#2fa4e3] transition-colors hover:bg-[#2fa4e3] hover:text-[#070d14]"
-            >
-              <Calendar className="h-4 w-4" />
-              <span>+ Nuevo Sitio Web / Charla 45 min</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setShowNewTicketModal(true)}
-              className="inline-flex items-center gap-2 rounded-xl bg-[#00b231] px-4 py-2.5 text-xs font-bold text-[#070d14] transition-colors hover:bg-[#008f27] hover:text-[#f7fafc]"
-            >
-              <Plus className="h-4 w-4" />
-              <span>Nuevo Ticket de Cambio</span>
-            </button>
-
-            <Link
-              href="/admin"
-              className="inline-flex items-center gap-1.5 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3.5 py-2.5 text-xs font-semibold text-[#94a6b8] hover:border-[#2fa4e3] hover:text-[#f7fafc]"
-            >
-              <ShieldCheck className="h-4 w-4 text-[#2fa4e3]" />
-              <span>Vista Admin</span>
-            </Link>
-
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3.5 py-2.5 text-xs font-semibold text-[#94a6b8] hover:border-red-500/50 hover:text-red-300"
-            >
-              <LogOut className="h-4 w-4" />
-              <span>Salir</span>
-            </button>
-          </div>
-        </div>
+        </ScrollReveal>
 
         {/* SECTION 1: MIS PROYECTOS WEB */}
         <div className="mt-8">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h2 className="flex items-center gap-2 font-heading text-lg font-bold text-[#f7fafc]">
-              <FolderGit2 className="h-5 w-5 text-[#00b231]" />
-              <span>Mis Sitios Web y Proyectos ({projects.length})</span>
-            </h2>
-            {selectedProjectId !== "all" && (
-              <button
-                type="button"
-                onClick={() => setSelectedProjectId("all")}
-                className="font-mono text-xs text-[#00b231] hover:underline"
-              >
-                Ver tickets de todos los proyectos ({tickets.length})
-              </button>
-            )}
-          </div>
+          <ScrollReveal variant="fade-up">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h2 className="flex items-center gap-2 font-heading text-lg font-bold text-[#f7fafc]">
+                <FolderGit2 className="h-5 w-5 text-[#00b231]" />
+                <span>Mis Sitios Web y Proyectos ({projects.length})</span>
+              </h2>
+              {selectedProjectId !== "all" && (
+                <button
+                  type="button"
+                  onClick={() => setSelectedProjectId("all")}
+                  className="font-mono text-xs text-[#00b231] hover:underline"
+                >
+                  Ver tickets de todos los proyectos ({tickets.length})
+                </button>
+              )}
+            </div>
+          </ScrollReveal>
 
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((prj) => {
               const isSelected = selectedProjectId === prj.id;
               const prjTicketCount = tickets.filter(
                 (t) => t.project_id === prj.id
               ).length;
               return (
-                <div
-                  key={prj.id}
-                  onClick={() =>
-                    setSelectedProjectId(isSelected ? "all" : prj.id)
-                  }
-                  className={`cursor-pointer rounded-2xl border p-5 transition-all ${
-                    isSelected
-                      ? "border-[#00b231] bg-[#0e1724] shadow-lg shadow-[#00b231]/10"
-                      : "border-[#1b2a3d] bg-[#0e1724]/80 hover:border-[#00b231]/50"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="rounded-lg bg-[#070d14] px-2.5 py-1 font-mono text-xs font-bold text-[#00b231]">
-                      {prj.code}
-                    </span>
-                    <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-2.5 py-0.5 font-mono text-[11px] uppercase text-[#2fa4e3]">
-                      {prj.status === "production"
-                        ? "En Producción"
-                        : prj.status === "onboarding"
-                        ? "Onboarding / Charla 45m"
-                        : "En Desarrollo"}
-                    </span>
-                  </div>
+                <StaggerItem key={prj.id} variant="zoom-in" className="h-full">
+                  <div
+                    onClick={() =>
+                      setSelectedProjectId(isSelected ? "all" : prj.id)
+                    }
+                    className={`h-full cursor-pointer rounded-2xl border p-5 transition-all ${
+                      isSelected
+                        ? "border-[#00b231] bg-[#0e1724] shadow-lg shadow-[#00b231]/10"
+                        : "border-[#1b2a3d] bg-[#0e1724]/80 hover:border-[#00b231]/50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="rounded-lg bg-[#070d14] px-2.5 py-1 font-mono text-xs font-bold text-[#00b231]">
+                        {prj.code}
+                      </span>
+                      <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-2.5 py-0.5 font-mono text-[11px] uppercase text-[#2fa4e3]">
+                        {prj.status === "production"
+                          ? "En Producción"
+                          : prj.status === "onboarding"
+                          ? "Onboarding / Charla 45m"
+                          : "En Desarrollo"}
+                      </span>
+                    </div>
 
-                  <h3 className="mt-3 font-heading text-base font-bold text-[#f7fafc]">
-                    {prj.name}
-                  </h3>
-                  <div className="mt-1 text-xs text-[#94a6b8]">
-                    Dominio:{" "}
-                    <span className="font-mono text-[#f7fafc]">
-                      {prj.current_domain || "En configuración"}
-                    </span>
-                  </div>
-                  <div className="mt-1 text-xs text-[#94a6b8]">
-                    Charla 45 min:{" "}
-                    <span className="text-[#33cf5e]">{prj.kickoff_date}</span>
-                  </div>
+                    <h3 className="mt-3 font-heading text-base font-bold text-[#f7fafc]">
+                      {prj.name}
+                    </h3>
+                    <div className="mt-1 text-xs text-[#94a6b8]">
+                      Dominio:{" "}
+                      <span className="font-mono text-[#f7fafc]">
+                        {prj.current_domain || "En configuración"}
+                      </span>
+                    </div>
+                    <div className="mt-1 text-xs text-[#94a6b8]">
+                      Charla 45 min:{" "}
+                      <span className="text-[#33cf5e]">{prj.kickoff_date}</span>
+                    </div>
 
-                  <div className="mt-4 flex items-center justify-between border-t border-[#1b2a3d] pt-3 text-xs">
-                    <span className="font-mono text-[#94a6b8]">
-                      {prjTicketCount} ticket(s) asociados
-                    </span>
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setEditingVaultProject(prj);
-                        setVaultNotes(prj.brand_vault_notes || "");
-                        setVaultKickoff(prj.kickoff_date || "");
-                      }}
-                      className="inline-flex items-center gap-1 font-semibold text-[#2fa4e3] hover:underline"
-                    >
-                      <Wrench className="h-3.5 w-3.5" />
-                      <span>Brand Vault / Horario</span>
-                    </button>
+                    <div className="mt-4 flex items-center justify-between border-t border-[#1b2a3d] pt-3 text-xs">
+                      <span className="font-mono text-[#94a6b8]">
+                        {prjTicketCount} ticket(s) asociados
+                      </span>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setEditingVaultProject(prj);
+                          setVaultNotes(prj.brand_vault_notes || "");
+                          setVaultKickoff(prj.kickoff_date || "");
+                        }}
+                        className="inline-flex items-center gap-1 font-semibold text-[#2fa4e3] hover:underline"
+                      >
+                        <Wrench className="h-3.5 w-3.5" />
+                        <span>Brand Vault / Horario</span>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
 
         {/* SECTION 2: TICKET LIST + INTERACTIVE THREAD & 1-CLICK PREVIEW APPROVAL */}
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <ScrollReveal variant="fade-up" delay={0.1}>
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-12">
           {/* Left Column: Tickets List */}
           <div className="lg:col-span-5">
             <div className="flex items-center justify-between">
@@ -694,6 +705,7 @@ export default function ClientPortalPage() {
             )}
           </div>
         </div>
+      </ScrollReveal>
 
         {/* MODAL 1: NEW CHANGE / SUPPORT TICKET */}
         {showNewTicketModal && (

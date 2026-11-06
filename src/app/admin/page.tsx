@@ -15,6 +15,11 @@ import {
   Calendar,
   ArrowLeft,
 } from "lucide-react";
+import {
+  ScrollReveal,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/motion/ScrollReveal";
 import type {
   EmailLogRecord,
   ProjectRecord,
@@ -199,71 +204,85 @@ export default function AdminHelpdeskPage() {
         )}
 
         {/* Header */}
-        <div className="flex flex-col justify-between gap-4 rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 sm:flex-row sm:items-center">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/40 bg-[#00b231]/10 px-3 py-1 font-mono text-xs font-semibold text-[#00b231]">
-                <Database className="h-3.5 w-3.5" />
-                {storageMode === "mysql"
-                  ? "MySQL Activo (127.0.0.1:3306/yrrgwebs)"
-                  : "Modo Demo Cloud"}
-              </span>
-              <span className="rounded-full border border-[#2fa4e3]/40 bg-[#2fa4e3]/10 px-3 py-1 font-mono text-xs text-[#2fa4e3]">
-                Admin Helpdesk Console
-              </span>
+        <ScrollReveal variant="fade-down">
+          <div className="flex flex-col justify-between gap-4 rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 sm:flex-row sm:items-center">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/40 bg-[#00b231]/10 px-3 py-1 font-mono text-xs font-semibold text-[#00b231]">
+                  <Database className="h-3.5 w-3.5" />
+                  {storageMode === "mysql"
+                    ? "MySQL Activo (127.0.0.1:3306/yrrgwebs)"
+                    : "Modo Demo Cloud"}
+                </span>
+                <span className="rounded-full border border-[#2fa4e3]/40 bg-[#2fa4e3]/10 px-3 py-1 font-mono text-xs text-[#2fa4e3]">
+                  Admin Helpdesk Console
+                </span>
+              </div>
+              <h1 className="mt-3 font-heading text-2xl font-extrabold text-[#f7fafc] sm:text-3xl">
+                Centro de Control YRRG.ai — Tickets, Proyectos y Emails
+              </h1>
             </div>
-            <h1 className="mt-3 font-heading text-2xl font-extrabold text-[#f7fafc] sm:text-3xl">
-              Centro de Control YRRG.ai — Tickets, Proyectos y Emails
-            </h1>
-          </div>
 
-          <Link
-            href="/portal"
-            className="inline-flex items-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-2.5 text-xs font-semibold text-[#f7fafc] hover:border-[#00b231]"
-          >
-            <ArrowLeft className="h-4 w-4 text-[#00b231]" />
-            <span>Ir a Vista Cliente</span>
-          </Link>
-        </div>
+            <Link
+              href="/portal"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-2.5 text-xs font-semibold text-[#f7fafc] hover:border-[#00b231]"
+            >
+              <ArrowLeft className="h-4 w-4 text-[#00b231]" />
+              <span>Ir a Vista Cliente</span>
+            </Link>
+          </div>
+        </ScrollReveal>
 
         {/* KPI Strip */}
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
-            <div className="font-mono text-xs text-[#94a6b8]">
-              Proyectos Totales
+        <StaggerContainer className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4" staggerDelay={0.07}>
+          <StaggerItem variant="zoom-in">
+            <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
+              <div className="font-mono text-xs text-[#94a6b8]">
+                Proyectos Totales
+              </div>
+              <div className="mt-1 font-mono text-3xl font-extrabold text-[#f7fafc]">
+                {projects.length}
+              </div>
             </div>
-            <div className="mt-1 font-mono text-3xl font-extrabold text-[#f7fafc]">
-              {projects.length}
+          </StaggerItem>
+
+          <StaggerItem variant="zoom-in">
+            <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
+              <div className="font-mono text-xs text-[#94a6b8]">
+                Tickets Totales
+              </div>
+              <div className="mt-1 font-mono text-3xl font-extrabold text-[#00b231]">
+                {tickets.length}
+              </div>
             </div>
-          </div>
-          <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
-            <div className="font-mono text-xs text-[#94a6b8]">
-              Tickets Totales
+          </StaggerItem>
+
+          <StaggerItem variant="zoom-in">
+            <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
+              <div className="font-mono text-xs text-[#94a6b8]">
+                Previews por Aprobar
+              </div>
+              <div className="mt-1 font-mono text-3xl font-extrabold text-[#2fa4e3]">
+                {tickets.filter((t) => t.status === "preview_ready").length}
+              </div>
             </div>
-            <div className="mt-1 font-mono text-3xl font-extrabold text-[#00b231]">
-              {tickets.length}
+          </StaggerItem>
+
+          <StaggerItem variant="zoom-in">
+            <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
+              <div className="font-mono text-xs text-[#94a6b8]">
+                Emails Enviados al Admin
+              </div>
+              <div className="mt-1 font-mono text-3xl font-extrabold text-[#33cf5e]">
+                {emailLogs.length}
+              </div>
             </div>
-          </div>
-          <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
-            <div className="font-mono text-xs text-[#94a6b8]">
-              Previews por Aprobar
-            </div>
-            <div className="mt-1 font-mono text-3xl font-extrabold text-[#2fa4e3]">
-              {tickets.filter((t) => t.status === "preview_ready").length}
-            </div>
-          </div>
-          <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-4">
-            <div className="font-mono text-xs text-[#94a6b8]">
-              Emails Enviados al Admin
-            </div>
-            <div className="mt-1 font-mono text-3xl font-extrabold text-[#33cf5e]">
-              {emailLogs.length}
-            </div>
-          </div>
-        </div>
+          </StaggerItem>
+        </StaggerContainer>
 
         {/* Navigation Tabs */}
-        <div className="mt-8 flex flex-wrap gap-2 border-b border-[#1b2a3d] pb-4">
+        <ScrollReveal variant="fade-up" delay={0.1}>
+          <div className="mt-8 flex flex-wrap gap-2 border-b border-[#1b2a3d] pb-4">
           <button
             type="button"
             onClick={() => setActiveTab("tickets")}
@@ -534,7 +553,8 @@ export default function AdminHelpdeskPage() {
             ))}
           </div>
         )}
-      </div>
+      </ScrollReveal>
     </div>
-  );
+  </div>
+);
 }

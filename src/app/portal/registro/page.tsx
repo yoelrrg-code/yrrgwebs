@@ -11,6 +11,7 @@ import {
   Globe,
   Sparkles,
 } from "lucide-react";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export default function PortalRegistroPage() {
   const router = useRouter();
@@ -79,25 +80,28 @@ export default function PortalRegistroPage() {
   return (
     <div className="bg-[#070d14] py-14 sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/30 bg-[#00b231]/10 px-3.5 py-1 font-mono text-xs font-semibold text-[#00b231]">
-            <Sparkles className="h-3.5 w-3.5" />
-            Onboarding de Cliente + MySQL Helpdesk
-          </span>
-          <h1 className="mt-3 font-heading text-3xl font-extrabold text-[#f7fafc] sm:text-4xl">
-            Crea tu cuenta de cliente y agenda tu charla de 45 min
-          </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-[#94a6b8] sm:text-base">
-            Al registrarte tendrás acceso inmediato a tu panel para gestionar
-            uno o varios sitios web, pedir cambios por tickets y aprobar vistas
-            previas en minutos.
-          </p>
-        </div>
+        <ScrollReveal variant="fade-down">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/30 bg-[#00b231]/10 px-3.5 py-1 font-mono text-xs font-semibold text-[#00b231]">
+              <Sparkles className="h-3.5 w-3.5" />
+              Onboarding de Cliente + MySQL Helpdesk
+            </span>
+            <h1 className="mt-3 font-heading text-3xl font-extrabold text-[#f7fafc] sm:text-4xl">
+              Crea tu cuenta de cliente y agenda tu charla de 45 min
+            </h1>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-[#94a6b8] sm:text-base">
+              Al registrarte tendrás acceso inmediato a tu panel para gestionar
+              uno o varios sitios web, pedir cambios por tickets y aprobar vistas
+              previas en minutos.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <form
-          onSubmit={handleSubmit}
-          className="mt-10 rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 shadow-2xl sm:p-10"
-        >
+        <ScrollReveal variant="zoom-in" delay={0.1}>
+          <form
+            onSubmit={handleSubmit}
+            className="mt-10 rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 shadow-2xl sm:p-10"
+          >
           {error && (
             <div className="mb-6 rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-xs font-medium text-red-300">
               {error}
@@ -361,7 +365,8 @@ export default function PortalRegistroPage() {
             </Link>
           </div>
         </form>
-      </div>
+      </ScrollReveal>
     </div>
-  );
+  </div>
+);
 }

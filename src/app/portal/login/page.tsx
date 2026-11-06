@@ -15,6 +15,11 @@ import {
   Github,
   Wand2,
 } from "lucide-react";
+import {
+  ScrollReveal,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/motion/ScrollReveal";
 
 export default function PortalLoginPage() {
   const router = useRouter();
@@ -124,110 +129,123 @@ export default function PortalLoginPage() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:items-center">
           {/* Left Column: Value Proposition */}
-          <div className="lg:col-span-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/30 bg-[#00b231]/10 px-3.5 py-1 font-mono text-xs font-semibold text-[#00b231]">
-              <Sparkles className="h-3.5 w-3.5" />
-              YRRG.ai Client Helpdesk
-            </span>
-            <h1 className="mt-4 font-heading text-3xl font-extrabold text-[#f7fafc] sm:text-4xl">
-              Gestiona tus sitios web, cambios y aprobaciones en un solo lugar
-            </h1>
-            <p className="mt-4 text-sm leading-relaxed text-[#94a6b8] sm:text-base">
-              Además de pedir cambios por WhatsApp, desde tu portal de cliente
-              puedes gestionar múltiples proyectos, abrir tickets priorizados,
-              agendar charlas de 45 minutos y aprobar enlaces Preview con 1 clic.
-            </p>
-
-            {/* Quick 1-Click Demo Access Card */}
-            <div className="mt-8 rounded-2xl border border-[#00b231]/40 bg-[#0e1724] p-5 shadow-xl shadow-[#00b231]/5">
-              <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#00b231]">
-                <Terminal className="h-4 w-4" />
-                <span>Acceso Rápido Demo (1 Clic • MySQL)</span>
-              </div>
-              <p className="mt-1.5 text-xs text-[#94a6b8]">
-                Prueba el flujo completo de proyectos, tickets y notificaciones
-                al administrador con datos reales en MySQL:
+          <ScrollReveal variant="slide-left" className="lg:col-span-2">
+            <div>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00b231]/30 bg-[#00b231]/10 px-3.5 py-1 font-mono text-xs font-semibold text-[#00b231]">
+                <Sparkles className="h-3.5 w-3.5" />
+                YRRG.ai Client Helpdesk
+              </span>
+              <h1 className="mt-4 font-heading text-3xl font-extrabold text-[#f7fafc] sm:text-4xl">
+                Gestiona tus sitios web, cambios y aprobaciones en un solo lugar
+              </h1>
+              <p className="mt-4 text-sm leading-relaxed text-[#94a6b8] sm:text-base">
+                Además de pedir cambios por WhatsApp, desde tu portal de cliente
+                puedes gestionar múltiples proyectos, abrir tickets priorizados,
+                agendar charlas de 45 minutos y aprobar enlaces Preview con 1 clic.
               </p>
-              <div className="mt-4 flex flex-col gap-2.5">
-                <button
-                  type="button"
-                  disabled={loading}
-                  onClick={() =>
-                    handleQuickDemo(
-                      "martin@grupoandino.com",
-                      "Cliente2026!",
-                      "/portal"
-                    )
-                  }
-                  className="flex w-full items-center justify-between rounded-xl bg-[#00b231] px-4 py-3 text-xs font-bold text-[#070d14] transition-colors hover:bg-[#008f27] hover:text-[#f7fafc]"
-                >
-                  <span className="flex items-center gap-2">
-                    <UserCheck className="h-4 w-4" />
-                    Entrar como Cliente Demo (Grupo Andino)
-                  </span>
-                  <ArrowRight className="h-4 w-4" />
-                </button>
 
-                <button
-                  type="button"
-                  disabled={loading}
-                  onClick={() =>
-                    handleQuickDemo("admin@yrrg.ai", "Admin2026!", "/admin")
-                  }
-                  className="flex w-full items-center justify-between rounded-xl border border-[#2fa4e3]/50 bg-[#070d14] px-4 py-3 text-xs font-bold text-[#2fa4e3] transition-colors hover:bg-[#2fa4e3]/10"
-                >
-                  <span className="flex items-center gap-2">
-                    <ShieldCheck className="h-4 w-4" />
-                    Entrar como Administrador (Consola + Emails)
-                  </span>
-                  <ArrowRight className="h-4 w-4" />
-                </button>
+              {/* Quick 1-Click Demo Access Card */}
+              <div className="mt-8 rounded-2xl border border-[#00b231]/40 bg-[#0e1724] p-5 shadow-xl shadow-[#00b231]/5">
+                <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#00b231]">
+                  <Terminal className="h-4 w-4" />
+                  <span>Acceso Rápido Demo (1 Clic • MySQL)</span>
+                </div>
+                <p className="mt-1.5 text-xs text-[#94a6b8]">
+                  Prueba el flujo completo de proyectos, tickets y notificaciones
+                  al administrador con datos reales en MySQL:
+                </p>
+                <StaggerContainer className="mt-4 flex flex-col gap-2.5" staggerDelay={0.08}>
+                  <StaggerItem variant="fade-up">
+                    <button
+                      type="button"
+                      disabled={loading}
+                      onClick={() =>
+                        handleQuickDemo(
+                          "martin@grupoandino.com",
+                          "Cliente2026!",
+                          "/portal"
+                        )
+                      }
+                      className="flex w-full items-center justify-between rounded-xl bg-[#00b231] px-4 py-3 text-xs font-bold text-[#070d14] transition-colors hover:bg-[#008f27] hover:text-[#f7fafc]"
+                    >
+                      <span className="flex items-center gap-2">
+                        <UserCheck className="h-4 w-4" />
+                        Entrar como Cliente Demo (Grupo Andino)
+                      </span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </StaggerItem>
+
+                  <StaggerItem variant="fade-up">
+                    <button
+                      type="button"
+                      disabled={loading}
+                      onClick={() =>
+                        handleQuickDemo("admin@yrrg.ai", "Admin2026!", "/admin")
+                      }
+                      className="flex w-full items-center justify-between rounded-xl border border-[#2fa4e3]/50 bg-[#070d14] px-4 py-3 text-xs font-bold text-[#2fa4e3] transition-colors hover:bg-[#2fa4e3]/10"
+                    >
+                      <span className="flex items-center gap-2">
+                        <ShieldCheck className="h-4 w-4" />
+                        Entrar como Administrador (Consola + Emails)
+                      </span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </StaggerItem>
+                </StaggerContainer>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Login Card + AuthProvider */}
-          <div className="rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 shadow-2xl sm:p-10 lg:col-span-3">
-            <h2 className="font-heading text-2xl font-bold text-[#f7fafc]">
-              Iniciar sesión en tu cuenta
-            </h2>
-            <p className="mt-1 text-xs text-[#94a6b8] sm:text-sm">
-              Ingresa con tu proveedor corporativo SSO o con tu correo y
-              contraseña.
-            </p>
+          <ScrollReveal variant="zoom-in" delay={0.15} className="lg:col-span-3">
+            <div className="rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 shadow-2xl sm:p-10">
+              <h2 className="font-heading text-2xl font-bold text-[#f7fafc]">
+                Iniciar sesión en tu cuenta
+              </h2>
+              <p className="mt-1 text-xs text-[#94a6b8] sm:text-sm">
+                Ingresa con tu proveedor corporativo SSO o con tu correo y
+                contraseña.
+              </p>
 
-            {/* AuthProvider Buttons */}
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <button
-                type="button"
-                disabled={loading}
-                onClick={() => handleOAuthProvider("google")}
-                className="flex items-center justify-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3 py-3 text-xs font-semibold text-[#f7fafc] transition-colors hover:border-[#00b231]"
-              >
-                <Chrome className="h-4 w-4 text-[#00b231]" />
-                <span>Google SSO</span>
-              </button>
+              {/* AuthProvider Buttons */}
+              <StaggerContainer className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3" staggerDelay={0.06}>
+                <StaggerItem variant="fade-up">
+                  <button
+                    type="button"
+                    disabled={loading}
+                    onClick={() => handleOAuthProvider("google")}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3 py-3 text-xs font-semibold text-[#f7fafc] transition-colors hover:border-[#00b231]"
+                  >
+                    <Chrome className="h-4 w-4 text-[#00b231]" />
+                    <span>Google SSO</span>
+                  </button>
+                </StaggerItem>
 
-              <button
-                type="button"
-                disabled={loading}
-                onClick={() => handleOAuthProvider("github")}
-                className="flex items-center justify-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3 py-3 text-xs font-semibold text-[#f7fafc] transition-colors hover:border-[#2fa4e3]"
-              >
-                <Github className="h-4 w-4 text-[#2fa4e3]" />
-                <span>GitHub SSO</span>
-              </button>
+                <StaggerItem variant="fade-up">
+                  <button
+                    type="button"
+                    disabled={loading}
+                    onClick={() => handleOAuthProvider("github")}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3 py-3 text-xs font-semibold text-[#f7fafc] transition-colors hover:border-[#2fa4e3]"
+                  >
+                    <Github className="h-4 w-4 text-[#2fa4e3]" />
+                    <span>GitHub SSO</span>
+                  </button>
+                </StaggerItem>
 
-              <button
-                type="button"
-                disabled={loading}
-                onClick={() => handleOAuthProvider("magic_link")}
-                className="flex items-center justify-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3 py-3 text-xs font-semibold text-[#f7fafc] transition-colors hover:border-[#00b231]"
-              >
-                <Wand2 className="h-4 w-4 text-[#00b231]" />
-                <span>Magic Link</span>
-              </button>
-            </div>
+                <StaggerItem variant="fade-up">
+                  <button
+                    type="button"
+                    disabled={loading}
+                    onClick={() => handleOAuthProvider("magic_link")}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3 py-3 text-xs font-semibold text-[#f7fafc] transition-colors hover:border-[#00b231]"
+                  >
+                    <Wand2 className="h-4 w-4 text-[#00b231]" />
+                    <span>Magic Link</span>
+                  </button>
+                </StaggerItem>
+              </StaggerContainer>
 
             <div className="my-6 flex items-center gap-3">
               <div className="h-px flex-1 bg-[#1b2a3d]" />
@@ -297,7 +315,8 @@ export default function PortalLoginPage() {
                 Crear cuenta y agendar charla de 45 min →
               </Link>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </div>
