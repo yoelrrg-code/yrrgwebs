@@ -130,7 +130,7 @@ export default function ClientesPage() {
                             {m.after}
                           </span>
                         </div>
-                        <div className="mt-1 text-right font-mono text-[11px] text-[#00b231]">
+                        <div className="mt-1 text-right font-mono text-xs text-[#00b231]">
                           {m.improvement}
                         </div>
                       </div>

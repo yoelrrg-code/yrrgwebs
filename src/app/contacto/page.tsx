@@ -184,10 +184,11 @@ export default function ContactoPage() {
 
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                      <label htmlFor="contact-name" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                         Tu Nombre *
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         value={name}
@@ -198,10 +199,11 @@ export default function ContactoPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                      <label htmlFor="contact-company" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                         Empresa u Organización *
                       </label>
                       <input
+                        id="contact-company"
                         type="text"
                         required
                         value={company}
@@ -214,10 +216,11 @@ export default function ContactoPage() {
 
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                      <label htmlFor="contact-website" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                         Sitio web actual (Opcional)
                       </label>
                       <input
+                        id="contact-website"
                         type="text"
                         value={website}
                         onChange={(e) => setWebsite(e.target.value)}
@@ -227,10 +230,11 @@ export default function ContactoPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                      <label htmlFor="contact-goal" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                         ¿Qué necesitas lograr?
                       </label>
                       <select
+                        id="contact-goal"
                         value={goal}
                         onChange={(e) => setGoal(e.target.value)}
                         className="mt-2 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-3.5 text-sm text-[#f7fafc] focus:border-[#00b231] focus:outline-none"
@@ -252,10 +256,11 @@ export default function ContactoPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                    <label htmlFor="contact-message" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                       Cuéntanos brevemente sobre tu negocio o proyecto
                     </label>
                     <textarea
+                      id="contact-message"
                       rows={4}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}

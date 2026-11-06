@@ -118,10 +118,11 @@ export default function PortalRegistroPage() {
 
           <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+              <label htmlFor="reg-name" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                 Nombre y Apellido *
               </label>
               <input
+                id="reg-name"
                 type="text"
                 required
                 value={name}
@@ -132,10 +133,11 @@ export default function PortalRegistroPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+              <label htmlFor="reg-email" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                 Correo Corporativo *
               </label>
               <input
+                id="reg-email"
                 type="email"
                 required
                 value={email}
@@ -146,10 +148,11 @@ export default function PortalRegistroPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+              <label htmlFor="reg-password" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                 Contraseña (mín. 6 caracteres) *
               </label>
               <input
+                id="reg-password"
                 type="password"
                 required
                 minLength={6}
@@ -161,10 +164,11 @@ export default function PortalRegistroPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+              <label htmlFor="reg-company" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                 Empresa u Organización *
               </label>
               <input
+                id="reg-company"
                 type="text"
                 required
                 value={company}
@@ -175,10 +179,11 @@ export default function PortalRegistroPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+              <label htmlFor="reg-phone" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                 WhatsApp Directo (para avisos de Preview) *
               </label>
               <input
+                id="reg-phone"
                 type="text"
                 required
                 value={phoneWhatsapp}
@@ -190,10 +195,11 @@ export default function PortalRegistroPage() {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                <label htmlFor="reg-country" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                   País *
                 </label>
                 <select
+                  id="reg-country"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                   className="mt-1.5 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-3 py-3 text-sm text-[#f7fafc] focus:border-[#00b231] focus:outline-none"
@@ -208,10 +214,11 @@ export default function PortalRegistroPage() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                <label htmlFor="reg-taxid" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                   CUIT / RUT / RFC
                 </label>
                 <input
+                  id="reg-taxid"
                   type="text"
                   value={taxId}
                   onChange={(e) => setTaxId(e.target.value)}
@@ -248,10 +255,11 @@ export default function PortalRegistroPage() {
             {createInitialProject && (
               <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                  <label htmlFor="reg-project-name" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                     Nombre del Sitio o Proyecto *
                   </label>
                   <input
+                    id="reg-project-name"
                     type="text"
                     required={createInitialProject}
                     value={projectName}
@@ -262,10 +270,11 @@ export default function PortalRegistroPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                  <label htmlFor="reg-service-type" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                     Servicio Principal Requerido
                   </label>
                   <select
+                    id="reg-service-type"
                     value={serviceType}
                     onChange={(e) => setServiceType(e.target.value)}
                     className="mt-1.5 w-full rounded-xl border border-[#1b2a3d] bg-[#070d14] px-4 py-3 text-sm text-[#f7fafc] focus:border-[#00b231] focus:outline-none"
@@ -289,12 +298,13 @@ export default function PortalRegistroPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                  <label htmlFor="reg-current-domain" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                     Dominio Actual (Si ya tienes uno)
                   </label>
                   <div className="relative mt-1.5">
                     <Globe className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-[#94a6b8]" />
                     <input
+                      id="reg-current-domain"
                       type="text"
                       value={currentDomain}
                       onChange={(e) => setCurrentDomain(e.target.value)}
@@ -305,10 +315,11 @@ export default function PortalRegistroPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                  <label htmlFor="reg-kickoff-date" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                     Día y Horario Preferido (Charla 45 min)
                   </label>
                   <input
+                    id="reg-kickoff-date"
                     type="text"
                     value={kickoffDate}
                     onChange={(e) => setKickoffDate(e.target.value)}
@@ -318,10 +329,11 @@ export default function PortalRegistroPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
+                  <label htmlFor="reg-kickoff-notes" className="block text-xs font-semibold uppercase tracking-wider text-[#94a6b8]">
                     Objetivos principales o referencias visuales
                   </label>
                   <textarea
+                    id="reg-kickoff-notes"
                     rows={3}
                     value={kickoffNotes}
                     onChange={(e) => setKickoffNotes(e.target.value)}

@@ -41,6 +41,12 @@ export async function POST(req: NextRequest) {
         .toLowerCase();
 
       let user = await findUserByEmail(targetEmail);
+      if (user && user.role === "admin") {
+        return NextResponse.json(
+          { error: "Las cuentas de administrador deben autenticarse con credenciales seguras." },
+          { status: 403 }
+        );
+      }
       if (!user) {
         user = await createUser({
           name:
@@ -107,6 +113,7 @@ export async function POST(req: NextRequest) {
 
       res.cookies.set(SESSION_COOKIE_NAME, token, {
         httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
         path: "/",
         maxAge: 60 * 60 * 24 * 7,
@@ -153,6 +160,7 @@ export async function POST(req: NextRequest) {
 
     response.cookies.set(SESSION_COOKIE_NAME, token, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       path: "/",
       maxAge: 60 * 60 * 24 * 7,

@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T14:14:55Z",
+  "title": "Design System: YRRG.ai",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Telemetry Emerald",
+        "canonical": "#00b231",
+        "tonalRamp": ["#002b0b", "#004d15", "#00731f", "#00992a", "#00b231", "#33cf5e", "#70e28e", "#bdf4cc"]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Emerald Hover",
+        "canonical": "#008f27",
+        "tonalRamp": ["#002109", "#003e11", "#005c19", "#007b22", "#008f27", "#23b74d", "#5ee183", "#b4f4c8"]
+      },
+      "primary-light": {
+        "role": "primary",
+        "displayName": "Emerald Light",
+        "canonical": "#33cf5e",
+        "tonalRamp": ["#063312", "#0e5a22", "#188235", "#24ab49", "#33cf5e", "#63dc84", "#9be9b2", "#d8f8e2"]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Electric Indigo",
+        "canonical": "#2fa4e3",
+        "tonalRamp": ["#092638", "#124361", "#1d638e", "#2784be", "#2fa4e3", "#5db9ea", "#95d2f2", "#d4edf9"]
+      },
+      "secondary-hover": {
+        "role": "secondary",
+        "displayName": "Indigo Hover",
+        "canonical": "#1e88c2",
+        "tonalRamp": ["#061e2d", "#0e374f", "#155275", "#1a6e9d", "#1e88c2", "#4aa2d1", "#83c2e3", "#cce6f4"]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Obsidian Canvas",
+        "canonical": "#070d14",
+        "tonalRamp": ["#030508", "#070d14", "#0e1724", "#162336", "#1f3049", "#2e4566", "#44628d", "#6487b9"]
+      },
+      "neutral-surface": {
+        "role": "neutral",
+        "displayName": "Slate Surface",
+        "canonical": "#0e1724",
+        "tonalRamp": ["#04070b", "#090f18", "#0e1724", "#152234", "#1d2e46", "#294060", "#39567e", "#5174a4"]
+      },
+      "neutral-border": {
+        "role": "neutral",
+        "displayName": "Steel Border",
+        "canonical": "#1b2a3d",
+        "tonalRamp": ["#0a1017", "#121b27", "#1b2a3d", "#243750", "#2e4665", "#3a577c", "#4c6e9a", "#6b8ebc"]
+      },
+      "neutral-text": {
+        "role": "neutral",
+        "displayName": "Snow Text",
+        "canonical": "#f7fafc",
+        "tonalRamp": ["#1a202c", "#2d3748", "#4a5568", "#718096", "#a0aec0", "#cbd5e0", "#e2e8f0", "#f7fafc"]
+      },
+      "neutral-muted": {
+        "role": "neutral",
+        "displayName": "Cool Gray Muted",
+        "canonical": "#94a6b8",
+        "tonalRamp": ["#1a222c", "#2d3a4b", "#43556d", "#5d7390", "#7a91ad", "#94a6b8", "#b5c3d2", "#dce3eb"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Hero", "purpose": "Hero headlines and major value propositions." },
+      "headline": { "displayName": "Section Headline", "purpose": "Section titles and modal headers." },
+      "title": { "displayName": "Card Title", "purpose": "Card titles, feature names, and dialog headers." },
+      "body": { "displayName": "Body Text", "purpose": "Paragraphs, lists, and form descriptions." },
+      "label": { "displayName": "Telemetry Monospace", "purpose": "Metrics, timestamps, tags, and badges." }
+    },
+    "shadows": [
+      {
+        "name": "ambient-glow",
+        "value": "0 0 22px -2px rgba(0, 178, 49, 0.32), 0 8px 20px -4px rgba(0, 178, 49, 0.18)",
+        "purpose": "Dynamic hover and pulse state on primary conversion CTAs."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 0 35px -5px rgba(0, 178, 49, 0.16)",
+        "purpose": "Applied on card hover alongside a vertical lift."
+      },
+      {
+        "name": "dropdown-overlay",
+        "value": "0 25px 50px -12px rgba(0, 0, 0, 0.6)",
+        "purpose": "Applied to elevated menus, floating simulators, and navigation drawers."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Smooth acceleration and snap for card transitions and fade-ins."
+      },
+      {
+        "name": "pulse-glow",
+        "value": "pulseGlow 3.2s infinite ease-in-out",
+        "purpose": "Subtle breathing luminescence on primary CTAs."
+      },
+      {
+        "name": "float-slow",
+        "value": "floatSlow 5s infinite ease-in-out",
+        "purpose": "Gentle floating motion for pill badges."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary conversion button with high-contrast emerald background and hover luminescence.",
+      "html": "<button class=\"ds-btn-primary\"><span>Agendar charla</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #00b231; color: #070d14; padding: 16px 32px; border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; border: none; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 0 22px -2px rgba(0, 178, 49, 0.32); } .ds-btn-primary:hover { background: #008f27; color: #f7fafc; transform: scale(1.02); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hairline steel bordered action for secondary workflows and staging portal entry.",
+      "html": "<button class=\"ds-btn-secondary\">Probar Portal de Tickets</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0e1724; color: #f7fafc; padding: 16px 32px; border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; border: 1px solid #1b2a3d; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover { border-color: #2fa4e3; background: rgba(14, 23, 36, 0.8); }"
+    },
+    {
+      "name": "Telemetry Pill",
+      "kind": "chip",
+      "refersTo": "badge-telemetry",
+      "description": "Monospace live status pill with pulsing signal for performance metrics and guarantees.",
+      "html": "<div class=\"ds-pill\"><span class=\"ds-pill-dot\"></span><span>Core Web Vitals 100/100</span></div>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 178, 49, 0.1); border: 1px solid rgba(0, 178, 49, 0.35); color: #00b231; padding: 6px 14px; border-radius: 9999px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; } .ds-pill-dot { width: 6px; height: 6px; border-radius: 50%; background: #00b231; }"
+    },
+    {
+      "name": "Interactive Metric Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Engineered container for displaying benchmark telemetry and key deliverables.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-metric\">&lt; 0.4s</div><div class=\"ds-card-label\">Carga Instantánea (LCP)</div></div>",
+      "css": ".ds-card { background: rgba(14, 23, 36, 0.9); border: 1px solid #1b2a3d; border-radius: 16px; padding: 24px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); backdrop-filter: blur(12px); } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 0 35px -5px rgba(0, 178, 49, 0.16); border-color: rgba(0, 178, 49, 0.4); } .ds-card-metric { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 800; color: #00b231; } .ds-card-label { margin-top: 6px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: rgba(247, 250, 252, 0.85); }"
+    },
+    {
+      "name": "Navigation Shell",
+      "kind": "nav",
+      "description": "Sticky top bar with obsidian backdrop blur and hairline divider.",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav-brand\">YRRG<span style=\"color:#00b231;\">.ai</span></div><div class=\"ds-nav-links\"><span class=\"ds-nav-active\">Servicios</span><span>Soluciones</span><span>Precios</span></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; background: rgba(7, 13, 20, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(27, 42, 61, 0.8); } .ds-nav-brand { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px; color: #f7fafc; } .ds-nav-links { display: flex; gap: 20px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: #94a6b8; } .ds-nav-active { color: #00b231; font-weight: 600; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Edge Terminal",
+    "overview": "The Edge Terminal visual identity reflects high-velocity engineering precision, enterprise robustness, and zero-friction operational authority. Rooted in developer tooling aesthetics, the canvas is an abyss of deep Obsidian (#070d14) punctuated by tactical Slate surfaces (#0e1724), razor-sharp hairline Steel borders (#1b2a3d), and active pulse signals in Telemetry Emerald (#00b231) and Electric Indigo (#2fa4e3).\n\nThe system avoids the pastel softness of generic B2B SaaS in favor of technical high-density clarity: dark-mode only, legible typography pairings with dedicated monospace telemetry data, and subtle 44px cybernetic background grids. The experience communicates instant speed, transparent deployment, and complete mechanical control.",
+    "keyCharacteristics": [
+      "High-contrast obsidian dark palette with emerald and indigo status luminescence",
+      "Typographic hierarchy separating assertive marketing display from precise monospace telemetry",
+      "Tonal depth created with hairline steel borders and subtle backdrop-blur rather than heavy drop shadows",
+      "Interactive responsiveness featuring micro-elevations, pulsing status rings, and live messaging simulations"
+    ],
+    "rules": [
+      {
+        "name": "The Telemetry Rarity Rule",
+        "body": "Telemetry Emerald is strictly a signal color. It is applied to no more than 10% of any viewport to preserve its punch as a conversion trigger and live indicator.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dual-Accent Division Rule",
+        "body": "Telemetry Emerald always signals action, speed, or performance; Electric Indigo always signals structural categorization, segments, or informational links. Never invert their roles.",
+        "section": "colors"
+      },
+      {
+        "name": "The Monospace Proof Rule",
+        "body": "All quantitative metrics (PageSpeed scores, latencies, percentages, pricing tiers, timestamps) must be rendered in JetBrains Mono. Numbers are technical proof, not marketing prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "All surfaces rest completely flat on the Obsidian canvas. Shadows and luminous glows exist only as reactive responses to user interaction, active polling, or live telemetry states.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do format all performance scores, latencies, metrics, and timestamps in JetBrains Mono.",
+      "Do use hairline steel borders (#1b2a3d) on all cards to maintain visual separation on dark backgrounds.",
+      "Do restrict Telemetry Emerald to active CTAs, success metrics, and real-time indicators.",
+      "Do use subtle background radial glows (rgba(0, 178, 49, 0.15)) behind hero and signature sections to create atmospheric depth."
+    ],
+    "donts": [
+      "Don't introduce light-mode backgrounds, pure white cards, or pastel fills.",
+      "Don't use generic decorative serif fonts or playful handwritten styles.",
+      "Don't use heavy drop shadows without steel borders; depth on dark canvases must be structural.",
+      "Don't color body paragraphs in pure #ffffff; always use Snow (#f7fafc) or Cool Gray (#94a6b8) for contrast balance."
+    ]
+  }
+}

@@ -65,7 +65,7 @@ export function Navbar() {
 
             <div className="invisible absolute left-0 top-full z-50 w-80 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className=" rounded-2xl border border-[#1b2a3d] bg-[#0e1724]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl">
-                <div className="px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-[#94a6b8]">
+                <div className="px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-[#94a6b8]">
                   5 Soluciones Integrales
                 </div>
                 {SERVICES.map((service) => (
@@ -118,7 +118,7 @@ export function Navbar() {
 
             <div className="invisible absolute left-0 top-full z-50 w-72 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl">
-                <div className="px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-[#94a6b8]">
+                <div className="px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-[#94a6b8]">
                   Según tu organización
                 </div>
                 {AUDIENCE_SEGMENTS.map((seg) => (
@@ -225,8 +225,10 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="inline-flex items-center justify-center rounded-xl border border-[#1b2a3d] bg-[#0e1724] p-2.5 text-[#f7fafc] lg:hidden"
-          aria-label="Abrir menú de navegación"
+          className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-[#1b2a3d] bg-[#0e1724] p-2.5 text-[#f7fafc] transition-colors hover:border-[#00b231] lg:hidden"
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+          aria-controls="mobile-nav-drawer"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -234,7 +236,7 @@ export function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       {mobileOpen && (
-        <div className="border-t border-[#1b2a3d] bg-[#070d14] px-4 pb-6 pt-4 lg:hidden">
+        <div id="mobile-nav-drawer" className="border-t border-[#1b2a3d] bg-[#070d14] px-4 pb-6 pt-4 lg:hidden">
           <div className="space-y-4">
             <div>
               <div className="px-2 font-mono text-xs uppercase tracking-wider text-[#00b231]">

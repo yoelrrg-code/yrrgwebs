@@ -55,7 +55,7 @@ export function WhatsAppSimulator() {
                 key={scenario.id}
                 type="button"
                 onClick={() => handleSelectScenario(scenario.id)}
-                className={`rounded-xl px-4 py-2.5 text-left text-xs font-semibold transition-all duration-300 ease-out sm:text-sm ${
+                className={`inline-flex min-h-[44px] items-center rounded-xl px-4 py-2.5 text-left text-xs font-semibold transition-all duration-300 ease-out sm:text-sm ${
                   active
                     ? "bg-[#00b231] text-[#070d14] shadow-lg shadow-[#00b231]/25 scale-[1.02]"
                     : "border border-[#1b2a3d] bg-[#070d14] text-[#94a6b8] hover:border-[#00b231]/50 hover:text-[#f7fafc]"
@@ -92,7 +92,7 @@ export function WhatsAppSimulator() {
                   </div>
                 </div>
               </div>
-              <span className="rounded-lg bg-[#0e1724] px-2.5 py-1 font-mono text-[11px] font-semibold text-[#00b231]">
+              <span className="rounded-lg bg-[#0e1724] px-2.5 py-1 font-mono text-xs font-semibold text-[#00b231]">
                 Paso 1: Tu mensaje
               </span>
             </div>
@@ -113,7 +113,7 @@ export function WhatsAppSimulator() {
               <p className="text-sm leading-relaxed text-[#f7fafc]/95">
                 {currentScenario.whatsappMessage}
               </p>
-              <div className="mt-2.5 flex items-center justify-end gap-1.5 font-mono text-[11px] text-[#94a6b8]">
+              <div className="mt-2.5 flex items-center justify-end gap-1.5 font-mono text-xs text-[#94a6b8]">
                 <span>{currentScenario.whatsappTime}</span>
                 <CheckCheck className="h-4 w-4 text-[#00b231]" />
               </div>
@@ -128,7 +128,7 @@ export function WhatsAppSimulator() {
                 <span>YRRG.ai Concierge IA</span>
               </div>
               <div className="inline-flex items-center gap-1 rounded-full bg-[#070d14] px-2.5 py-1">
-                <span className="font-mono text-[10px] text-[#2fa4e3]">
+                <span className="font-mono text-xs text-[#2fa4e3]">
                   Agente activo
                 </span>
                 <span className="typing-dot-1 h-1.5 w-1.5 rounded-full bg-[#00b231]" />
@@ -153,7 +153,7 @@ export function WhatsAppSimulator() {
                   YRRG-Agent Pipeline
                 </span>
               </div>
-              <span className="rounded-lg bg-[#0e1724] px-2.5 py-1 font-mono text-[11px] font-semibold text-[#2fa4e3]">
+              <span className="rounded-lg bg-[#0e1724] px-2.5 py-1 font-mono text-xs font-semibold text-[#2fa4e3]">
                 Paso 2: Ejecución IA
               </span>
             </div>
@@ -168,7 +168,7 @@ export function WhatsAppSimulator() {
                     <span className="font-mono text-xs font-bold text-[#00b231]">
                       0{index + 1}. {log.step}
                     </span>
-                    <span className="font-mono text-[11px] text-[#94a6b8]">
+                    <span className="font-mono text-xs text-[#94a6b8]">
                       {log.time}
                     </span>
                   </div>
@@ -201,7 +201,7 @@ export function WhatsAppSimulator() {
                   Entorno Preview & Live
                 </span>
               </div>
-              <span className="rounded-lg bg-[#0e1724] px-2.5 py-1 font-mono text-[11px] font-semibold text-[#00b231]">
+              <span className="rounded-lg bg-[#0e1724] px-2.5 py-1 font-mono text-xs font-semibold text-[#00b231]">
                 Paso 3: Tu aprobación
               </span>
             </div>
@@ -214,7 +214,7 @@ export function WhatsAppSimulator() {
 
             {/* Before Card */}
             <div className="mt-4 rounded-xl border border-[#1b2a3d] bg-[#0e1724]/50 p-4 opacity-80">
-              <div className="font-mono text-[11px] uppercase tracking-wider text-[#94a6b8]">
+              <div className="font-mono text-xs uppercase tracking-wider text-[#94a6b8]">
                 Antes (Producción)
               </div>
               <div className="mt-1 text-sm font-bold text-[#f7fafc]">
@@ -228,10 +228,10 @@ export function WhatsAppSimulator() {
             {/* After Preview Card */}
             <div className="mt-4 rounded-xl border border-[#00b231]/50 bg-[#00b231]/10 p-4">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#00b231]">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#00b231]">
                   {isApproved ? "✓ Publicado en Vivo" : "Nuevo en Preview"}
                 </span>
-                <span className="rounded-full bg-[#070d14] px-2.5 py-0.5 font-mono text-[11px] text-[#00b231]">
+                <span className="rounded-full bg-[#070d14] px-2.5 py-0.5 font-mono text-xs text-[#00b231]">
                   {currentScenario.afterPreview.badge}
                 </span>
               </div>

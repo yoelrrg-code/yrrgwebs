@@ -345,7 +345,7 @@ export default function AdminHelpdeskPage() {
                       <span className="font-mono text-xs font-bold text-[#00b231]">
                         #{tck.ticket_number} • {tck.project_code}
                       </span>
-                      <span className="rounded bg-[#070d14] px-2 py-0.5 font-mono text-[10px] uppercase text-[#2fa4e3]">
+                      <span className="rounded bg-[#070d14] px-2 py-0.5 font-mono text-xs uppercase text-[#2fa4e3]">
                         {tck.status}
                       </span>
                     </div>

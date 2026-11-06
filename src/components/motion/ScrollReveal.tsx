@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, type Variants } from "motion/react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 
 type RevealVariant = "fade-up" | "fade-down" | "zoom-in" | "slide-left" | "slide-right" | "flip-up";
 
@@ -51,7 +51,20 @@ export function ScrollReveal({
   viewportMargin = "-60px",
   once = true,
 }: ScrollRevealProps) {
+  const shouldReduceMotion = useReducedMotion();
   const selected = variantStyles[variant];
+
+  const hiddenState = shouldReduceMotion ? { opacity: 0 } : selected.hidden;
+  const visibleState = shouldReduceMotion
+    ? { opacity: 1, transition: { duration: 0.25, delay } }
+    : {
+        ...selected.visible,
+        transition: {
+          duration,
+          delay,
+          ease: [0.22, 1, 0.36, 1],
+        },
+      };
 
   return (
     <motion.div
@@ -59,15 +72,8 @@ export function ScrollReveal({
       whileInView="visible"
       viewport={{ once, margin: viewportMargin as any }}
       variants={{
-        hidden: selected.hidden,
-        visible: {
-          ...selected.visible,
-          transition: {
-            duration,
-            delay,
-            ease: [0.22, 1, 0.36, 1], // snappy Apple/Linear cubic-bezier
-          },
-        },
+        hidden: hiddenState,
+        visible: visibleState,
       }}
       className={className}
     >
@@ -84,11 +90,11 @@ interface StaggerContainerProps {
   once?: boolean;
 }
 
-const containerVariants = (staggerDelay: number): Variants => ({
+const containerVariants = (staggerDelay: number, shouldReduceMotion: boolean | null): Variants => ({
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: staggerDelay,
+      staggerChildren: shouldReduceMotion ? 0.04 : staggerDelay,
     },
   },
 });
@@ -100,12 +106,14 @@ export function StaggerContainer({
   viewportMargin = "-60px",
   once = true,
 }: StaggerContainerProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once, margin: viewportMargin as any }}
-      variants={containerVariants(staggerDelay)}
+      variants={containerVariants(staggerDelay, shouldReduceMotion)}
       className={className}
     >
       {children}
@@ -124,19 +132,25 @@ export function StaggerItem({
   variant = "fade-up",
   className = "",
 }: StaggerItemProps) {
+  const shouldReduceMotion = useReducedMotion();
   const selected = variantStyles[variant];
+
+  const hiddenState = shouldReduceMotion ? { opacity: 0 } : selected.hidden;
+  const visibleState = shouldReduceMotion
+    ? { opacity: 1, transition: { duration: 0.25 } }
+    : {
+        ...selected.visible,
+        transition: {
+          duration: 0.6,
+          ease: [0.22, 1, 0.36, 1],
+        },
+      };
 
   return (
     <motion.div
       variants={{
-        hidden: selected.hidden,
-        visible: {
-          ...selected.visible,
-          transition: {
-            duration: 0.6,
-            ease: [0.22, 1, 0.36, 1],
-          },
-        },
+        hidden: hiddenState,
+        visible: visibleState,
       }}
       className={className}
     >

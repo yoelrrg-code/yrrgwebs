@@ -79,8 +79,18 @@ export async function getSessionUser(): Promise<SessionPayload | null> {
   }
 }
 
-// Lightweight per-IP rate limiter for API protection
+// Lightweight per-IP rate limiter for API protection with automatic eviction
 const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
+
+function cleanupExpiredBuckets(now: number) {
+  if (rateLimitBuckets.size > 250) {
+    for (const [key, b] of rateLimitBuckets.entries()) {
+      if (now > b.resetAt) {
+        rateLimitBuckets.delete(key);
+      }
+    }
+  }
+}
 
 export function checkRateLimit(
   key: string,
@@ -88,6 +98,8 @@ export function checkRateLimit(
   windowMs = 60_000
 ): boolean {
   const now = Date.now();
+  cleanupExpiredBuckets(now);
+
   const bucket = rateLimitBuckets.get(key);
   if (!bucket || now > bucket.resetAt) {
     rateLimitBuckets.set(key, { count: 1, resetAt: now + windowMs });

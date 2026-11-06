@@ -369,7 +369,7 @@ export default function HomePage() {
                       <span className="font-mono text-3xl font-extrabold text-[#00b231]">
                         {step.stepNumber}
                       </span>
-                      <span className="rounded-lg border border-[#1b2a3d] bg-[#070d14] px-2.5 py-1 font-mono text-[11px] text-[#2fa4e3]">
+                      <span className="rounded-lg border border-[#1b2a3d] bg-[#070d14] px-2.5 py-1 font-mono text-xs text-[#2fa4e3]">
                         {step.badge}
                       </span>
                     </div>

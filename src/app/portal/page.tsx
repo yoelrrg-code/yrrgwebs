@@ -434,7 +434,7 @@ export default function ClientPortalPage() {
                       <span className="rounded-lg bg-[#070d14] px-2.5 py-1 font-mono text-xs font-bold text-[#00b231]">
                         {prj.code}
                       </span>
-                      <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-2.5 py-0.5 font-mono text-[11px] uppercase text-[#2fa4e3]">
+                      <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-2.5 py-0.5 font-mono text-xs uppercase text-[#2fa4e3]">
                         {prj.status === "production"
                           ? "En Producción"
                           : prj.status === "onboarding"
@@ -516,12 +516,12 @@ export default function ClientPortalPage() {
                         <span className="font-mono text-xs font-bold text-[#00b231]">
                           #{tck.ticket_number}
                         </span>
-                        <span className="rounded bg-[#070d14] px-2 py-0.5 font-mono text-[10px] text-[#94a6b8]">
+                        <span className="rounded bg-[#070d14] px-2 py-0.5 font-mono text-xs text-[#94a6b8]">
                           {tck.project_code || "PRJ"}
                         </span>
                       </div>
                       <span
-                        className={`rounded-full border px-2.5 py-0.5 font-mono text-[10px] font-semibold ${st.colorClass}`}
+                        className={`rounded-full border px-2.5 py-0.5 font-mono text-xs font-semibold ${st.colorClass}`}
                       >
                         {st.label}
                       </span>
@@ -531,7 +531,7 @@ export default function ClientPortalPage() {
                       {tck.subject}
                     </h3>
 
-                    <div className="mt-2 flex items-center justify-between text-[11px] text-[#94a6b8]">
+                    <div className="mt-2 flex items-center justify-between text-xs text-[#94a6b8]">
                       <span>{TYPE_LABELS[tck.type] || tck.type}</span>
                       <span className="font-mono">{tck.created_at}</span>
                     </div>
@@ -665,7 +665,7 @@ export default function ClientPortalPage() {
                               )}
                               {msg.sender_name}
                             </span>
-                            <span className="font-mono text-[11px] text-[#94a6b8]">
+                            <span className="font-mono text-xs text-[#94a6b8]">
                               {msg.created_at}
                             </span>
                           </div>

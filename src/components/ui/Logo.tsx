@@ -66,7 +66,7 @@ export function Logo({ className = "", showSubtitle = false }: LogoProps) {
           <span className="text-[#00b231]">.ai</span>
         </div>
         {showSubtitle && (
-          <span className="font-mono text-[10px] uppercase tracking-widest text-[#94a6b8]">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#94a6b8]">
             Smart Website System
           </span>
         )}

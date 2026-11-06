@@ -870,6 +870,40 @@ export async function listAllTickets(): Promise<TicketRecord[]> {
   });
 }
 
+export async function findTicketById(
+  ticketId: string
+): Promise<TicketRecord | null> {
+  const mode = await ensureDatabaseInitialized();
+  if (mode === "mysql") {
+    const pool = await getMysqlPool();
+    const [rows] = await pool.query<RowDataPacket[]>(
+      `SELECT t.*, p.code AS project_code, p.name AS project_name,
+              u.name AS client_name, u.company AS client_company, u.email AS client_email, u.phone_whatsapp AS client_whatsapp
+       FROM tickets t
+       LEFT JOIN projects p ON t.project_id = p.id
+       LEFT JOIN users u ON t.user_id = u.id
+       WHERE t.id = ? LIMIT 1`,
+      [ticketId]
+    );
+    return (rows[0] as TicketRecord) || null;
+  }
+
+  const mem = getMemStore();
+  const t = mem.tickets.find((item) => item.id === ticketId);
+  if (!t) return null;
+  const p = mem.projects.find((prj) => prj.id === t.project_id);
+  const u = mem.users.find((usr) => usr.id === t.user_id);
+  return {
+    ...t,
+    project_code: p?.code,
+    project_name: p?.name,
+    client_name: u?.name,
+    client_company: u?.company,
+    client_email: u?.email,
+    client_whatsapp: u?.phone_whatsapp,
+  };
+}
+
 export async function getMessagesForTicket(
   ticketId: string
 ): Promise<TicketMessageRecord[]> {

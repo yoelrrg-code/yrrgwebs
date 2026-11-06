@@ -7,6 +7,7 @@ import {
   createProject,
   createTicket,
   ensureDatabaseInitialized,
+  findTicketById,
   findUserById,
   getMessagesForTicket,
   listAllProjects,
@@ -37,8 +38,19 @@ export async function GET(req: NextRequest) {
   const ticketId = req.nextUrl.searchParams.get("ticketId");
 
   if (ticketId) {
+    const ticket = await findTicketById(ticketId);
+    if (!ticket) {
+      return NextResponse.json({ error: "Ticket no encontrado." }, { status: 404 });
+    }
+    // Authorization check: User must be ticket owner or admin
+    if (session.role !== "admin" && ticket.user_id !== session.id) {
+      return NextResponse.json(
+        { error: "Acceso no autorizado a este ticket." },
+        { status: 403 }
+      );
+    }
     const messages = await getMessagesForTicket(ticketId);
-    return NextResponse.json({ ok: true, messages, storageMode });
+    return NextResponse.json({ ok: true, ticket, messages, storageMode });
   }
 
   const fullUser = await findUserById(session.id);
@@ -195,6 +207,17 @@ export async function POST(req: NextRequest) {
         );
       }
 
+      const ticket = await findTicketById(ticket_id);
+      if (!ticket) {
+        return NextResponse.json({ error: "Ticket no encontrado." }, { status: 404 });
+      }
+      if (session.role !== "admin" && ticket.user_id !== session.id) {
+        return NextResponse.json(
+          { error: "No tienes permiso para responder en este ticket." },
+          { status: 403 }
+        );
+      }
+
       const newMsg = await addTicketMessage({
         ticket_id,
         sender_user_id: session.id,
@@ -221,6 +244,21 @@ export async function POST(req: NextRequest) {
     // 5. 1-Click Client Approval of Preview Link
     if (action === "approve_preview") {
       const { ticket_id, ticket_number } = body;
+      if (!ticket_id) {
+        return NextResponse.json({ error: "Ticket ID requerido." }, { status: 400 });
+      }
+
+      const ticket = await findTicketById(ticket_id);
+      if (!ticket) {
+        return NextResponse.json({ error: "Ticket no encontrado." }, { status: 404 });
+      }
+      if (session.role !== "admin" && ticket.user_id !== session.id) {
+        return NextResponse.json(
+          { error: "No tienes permiso para aprobar este ticket." },
+          { status: 403 }
+        );
+      }
+
       const approvedLabel = `${session.name} (${session.email})`;
 
       const updated = await approveTicketPreview({
