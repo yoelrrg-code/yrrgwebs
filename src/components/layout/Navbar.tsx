@@ -200,8 +200,18 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* Primary CTA */}
-        <div className="hidden items-center gap-3 lg:flex">
+        {/* Primary CTA & Client Portal Button */}
+        <div className="hidden items-center gap-2.5 lg:flex">
+          <Link
+            href="/portal"
+            className={`inline-flex items-center gap-2 rounded-xl border px-3.5 py-2.5 text-xs font-semibold transition-all ${
+              isActive("/portal") || isActive("/admin")
+                ? "border-[#00b231] bg-[#00b231]/15 text-[#00b231]"
+                : "border-[#1b2a3d] bg-[#0e1724] text-[#f7fafc] hover:border-[#2fa4e3]"
+            }`}
+          >
+            <span>Portal Clientes</span>
+          </Link>
           <Link
             href="/contacto"
             className="inline-flex items-center gap-2 rounded-xl bg-[#00b231] px-4 py-2.5 text-sm font-semibold text-[#070d14] shadow-lg shadow-[#00b231]/20 transition-all hover:bg-[#008f27] hover:text-[#f7fafc]"
@@ -309,14 +319,23 @@ export function Navbar() {
               </Link>
             </div>
 
-            <Link
-              href="/contacto"
-              onClick={() => setMobileOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#00b231] px-4 py-3 text-sm font-bold text-[#070d14]"
-            >
-              <span>Empezar ahora</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+              <Link
+                href="/portal"
+                onClick={() => setMobileOpen(false)}
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#2fa4e3]/50 bg-[#0e1724] px-4 py-3 text-sm font-bold text-[#2fa4e3]"
+              >
+                <span>Portal Clientes (Tickets)</span>
+              </Link>
+              <Link
+                href="/contacto"
+                onClick={() => setMobileOpen(false)}
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#00b231] px-4 py-3 text-sm font-bold text-[#070d14]"
+              >
+                <span>Empezar ahora</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       )}

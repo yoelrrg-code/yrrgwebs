@@ -150,6 +150,22 @@ export function Footer() {
                   Agendar Llamada
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/portal"
+                  className="font-semibold text-[#00b231] transition-colors hover:underline"
+                >
+                  Portal de Clientes (Tickets)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/admin"
+                  className="transition-colors hover:text-[#2fa4e3]"
+                >
+                  Consola Admin
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

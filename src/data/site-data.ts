@@ -560,19 +560,19 @@ export const HOW_IT_WORKS_STEPS = [
   },
   {
     stepNumber: "03",
-    badge: "Operación Continua • Cero Paneles",
-    title: "Olvídate de los paneles: pide todo por WhatsApp o Email",
+    badge: "Operación Continua • WhatsApp + Portal Tickets",
+    title: "Cero paneles complejos: pide todo por WhatsApp o en tu Portal de Tickets",
     description:
-      "Una vez publicado tu sitio, nunca más tendrás que entrar a un panel de control. Cuando quieras cambiar precios, subir fotos, agregar una nueva sección o publicar una novedad, simplemente nos envías un mensaje o audio de WhatsApp.",
-    deliverable: "Recepción inmediata por nuestro sistema inteligente.",
+      "Una vez publicado tu sitio, nunca más tendrás que aprender a usar un CMS complicado. Cuando quieras cambiar precios, subir fotos, agregar una nueva sección o lanzar otro sitio, simplemente nos envías un WhatsApp o abres un ticket en tu Portal de Clientes.",
+    deliverable: "Ticket registrado en tiempo real y asignado a IA + Ingeniería.",
   },
   {
     stepNumber: "04",
-    badge: "SLA < 30 min • Preview & Live",
-    title: "Vista previa en 30 minutos y publicación en 1 clic",
+    badge: "SLA < 30 min • Preview & 1-Click Live",
+    title: "Vista previa en 30 minutos y aprobación en 1 clic",
     description:
-      "Nuestro flujo de agentes de IA e ingenieros procesa tu pedido, aplica los cambios en código limpio y te envía un enlace Preview seguro en menos de 30 minutos. Lo miras desde tu celular, nos das el OK y pasa a estar en vivo al instante.",
-    deliverable: "Cambio desplegado globalmente en red Edge sin caídas.",
+      "Nuestro flujo de agentes de IA e ingenieros procesa tu pedido, aplica los cambios en código limpio y te envía un enlace Preview seguro en menos de 30 minutos. Lo apruebas con 1 clic desde tu Portal de Clientes o por WhatsApp y sale en vivo al instante.",
+    deliverable: "Cambio aprobado y desplegado globalmente en red Edge sin caídas.",
   },
 ];
 
