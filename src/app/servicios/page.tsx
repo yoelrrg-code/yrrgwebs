@@ -28,19 +28,19 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
 
 export default function ServiciosPage() {
   return (
-    <div className="bg-[#070d14] py-16 sm:py-24">
+    <div className="bg-[#070d14] py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#00b231]">
             Arquitectura Integral YRRG.ai
           </span>
-          <h1 className="mt-3 font-heading text-4xl font-extrabold text-[#f7fafc] sm:text-5xl">
+          <h1 className="mt-4 font-heading text-4xl font-extrabold leading-[1.2] text-[#f7fafc] sm:text-5xl">
             Cinco servicios de ingeniería web en un solo sistema
           </h1>
-          <p className="mt-4 text-lg text-[#94a6b8]">
+          <p className="mt-5 text-lg leading-relaxed text-[#94a6b8]">
             No vendemos plantillas sueltas ni horas de soporte aisladas. Cada
             Smart Website incluye desarrollo en Next.js, migración segura,
-            velocidad extrema, AI SEO y gestión continua por WhatsApp.
+            velocidad extrema, AI SEO y gestión continua por WhatsApp y Tickets.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function ServiciosPage() {
           {SERVICES.map((service, idx) => (
             <div
               key={service.slug}
-              className="rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-6 transition-all hover:border-[#00b231]/50 sm:p-10"
+              className="card-interactive rounded-3xl border border-[#1b2a3d] bg-[#0e1724] p-7 hover:border-[#00b231]/50 sm:p-10"
             >
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                 <div className="lg:col-span-2">
@@ -56,25 +56,25 @@ export default function ServiciosPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#1b2a3d] bg-[#070d14]">
                       {SERVICE_ICONS[service.slug]}
                     </div>
-                    <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-3 py-1 font-mono text-xs text-[#00b231]">
+                    <span className="rounded-full border border-[#1b2a3d] bg-[#070d14] px-3.5 py-1 font-mono text-xs text-[#00b231]">
                       0{idx + 1} • {service.badge}
                     </span>
                   </div>
 
-                  <h2 className="mt-4 font-heading text-2xl font-bold text-[#f7fafc] sm:text-3xl">
+                  <h2 className="mt-5 font-heading text-2xl font-bold leading-snug text-[#f7fafc] sm:text-3xl">
                     {service.title}
                   </h2>
-                  <p className="mt-3 text-base leading-relaxed text-[#94a6b8]">
+                  <p className="mt-3.5 text-base leading-relaxed text-[#94a6b8]">
                     {service.description}
                   </p>
 
-                  <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="mt-6 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
                     {service.solutions.map((sol) => (
                       <div
                         key={sol}
-                        className="flex items-start gap-2.5 text-sm text-[#f7fafc]/90"
+                        className="flex items-start gap-2.5 text-sm leading-relaxed text-[#f7fafc]/90 sm:text-base"
                       >
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#00b231]" />
+                        <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#00b231]" />
                         <span>{sol}</span>
                       </div>
                     ))}
@@ -89,15 +89,15 @@ export default function ServiciosPage() {
                     <div className="mt-2 font-mono text-4xl font-extrabold text-[#00b231]">
                       {service.heroMetric}
                     </div>
-                    <div className="mt-1 text-xs text-[#94a6b8]">
+                    <div className="mt-1.5 text-sm leading-relaxed text-[#f7fafc]/85">
                       {service.heroMetricLabel}
                     </div>
 
                     <div className="mt-6 border-t border-[#1b2a3d] pt-4">
-                      <div className="font-mono text-[11px] uppercase text-[#94a6b8]">
+                      <div className="font-mono text-xs uppercase text-[#2fa4e3]">
                         Especificaciones Técnicas
                       </div>
-                      <ul className="mt-2 space-y-1.5 font-mono text-xs text-[#f7fafc]/80">
+                      <ul className="mt-2.5 space-y-2 font-mono text-xs leading-relaxed text-[#f7fafc]/85">
                         {service.techSpecs.map((spec) => (
                           <li key={spec}>• {spec}</li>
                         ))}
@@ -107,7 +107,7 @@ export default function ServiciosPage() {
 
                   <Link
                     href={`/servicios/${service.slug}`}
-                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#00b231] px-4 py-3 text-sm font-bold text-[#070d14] transition-colors hover:bg-[#008f27] hover:text-[#f7fafc]"
+                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#00b231] px-4 py-3.5 text-sm font-bold text-[#070d14] transition-all duration-300 hover:bg-[#008f27] hover:text-[#f7fafc]"
                   >
                     <span>Explorar {service.shortTitle}</span>
                     <ArrowRight className="h-4 w-4" />

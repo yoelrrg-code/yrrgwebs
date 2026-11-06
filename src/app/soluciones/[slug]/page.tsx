@@ -58,20 +58,20 @@ export default async function SolutionSegmentPage({
             <Sparkles className="h-3.5 w-3.5" />
             {segment.badge}
           </span>
-          <h1 className="mt-4 font-heading text-3xl font-extrabold text-[#f7fafc] sm:text-5xl">
+          <h1 className="mt-4 font-heading text-3xl font-extrabold leading-[1.2] text-[#f7fafc] sm:text-5xl">
             {segment.title}
           </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#94a6b8]">
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#f7fafc]/90">
             {segment.subtitle}
           </p>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#94a6b8]/90">
+          <p className="mt-3.5 max-w-3xl text-base leading-relaxed text-[#94a6b8]">
             {segment.description}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/contacto"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#00b231] px-6 py-3.5 text-sm font-bold text-[#070d14] hover:bg-[#008f27] hover:text-[#f7fafc]"
+              href="/portal/registro"
+              className="animate-pulse-glow inline-flex items-center gap-2 rounded-xl bg-[#00b231] px-6 py-3.5 text-sm font-bold text-[#070d14] transition-all duration-300 hover:bg-[#008f27] hover:text-[#f7fafc]"
             >
               <span>Agendar charla de 45 min</span>
               <ArrowRight className="h-4 w-4" />
@@ -89,44 +89,44 @@ export default async function SolutionSegmentPage({
 
         {/* Pain Points vs Ideal For */}
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl border border-red-500/20 bg-[#0e1724]/70 p-7">
-            <h2 className="font-heading text-xl font-bold text-[#f7fafc]">
+          <div className="rounded-3xl border border-red-500/25 bg-[#0e1724]/80 p-7 sm:p-8">
+            <h2 className="font-heading text-2xl font-bold leading-snug text-[#f7fafc]">
               Los obstáculos que resolvemos en {segment.shortTitle}
             </h2>
-            <ul className="mt-5 space-y-3.5 text-sm text-[#94a6b8]">
+            <ul className="mt-5 space-y-4 text-base leading-relaxed text-[#94a6b8]">
               {segment.painPoints.map((pain) => (
                 <li key={pain} className="flex items-start gap-3">
-                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-400" />
+                  <XCircle className="mt-1 h-5 w-5 shrink-0 text-red-400" />
                   <span>{pain}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="rounded-3xl border border-[#00b231]/40 bg-[#0e1724] p-7">
-            <h2 className="font-heading text-xl font-bold text-[#f7fafc]">
+          <div className="card-interactive rounded-3xl border border-[#00b231]/45 bg-[#0e1724] p-7 sm:p-8">
+            <h2 className="font-heading text-2xl font-bold leading-snug text-[#f7fafc]">
               Organizaciones que eligen este modelo
             </h2>
-            <ul className="mt-5 space-y-3.5 text-sm text-[#f7fafc]">
+            <ul className="mt-5 space-y-4 text-base leading-relaxed text-[#f7fafc]">
               {segment.idealFor.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#00b231]" />
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#00b231]" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-6 rounded-2xl border border-[#1b2a3d] bg-[#070d14] p-5">
+            <div className="mt-7 rounded-2xl border border-[#1b2a3d] bg-[#070d14] p-5">
               <div className="flex items-center gap-2 text-[#00b231]">
                 <Quote className="h-4 w-4" />
                 <span className="font-mono text-xs uppercase">
                   Experiencia de Cliente
                 </span>
               </div>
-              <p className="mt-2 text-sm italic text-[#94a6b8]">
+              <p className="mt-2.5 text-base italic leading-relaxed text-[#94a6b8]">
                 “{segment.featuredQuote.quote}”
               </p>
-              <div className="mt-3 text-xs font-semibold text-[#f7fafc]">
+              <div className="mt-3 text-sm font-semibold text-[#f7fafc]">
                 {segment.featuredQuote.author} —{" "}
                 <span className="font-normal text-[#94a6b8]">
                   {segment.featuredQuote.role}
@@ -138,22 +138,22 @@ export default async function SolutionSegmentPage({
 
         {/* Benefits Grid */}
         <div className="mt-16">
-          <h2 className="font-heading text-2xl font-bold text-[#f7fafc] sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold leading-tight text-[#f7fafc] sm:text-3xl">
             Por qué YRRG.ai es el aliado ideal para {segment.shortTitle}
           </h2>
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
             {segment.benefits.map((benefit, idx) => (
               <div
                 key={benefit.title}
-                className="rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-6"
+                className="card-interactive rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-7"
               >
                 <div className="font-mono text-xs font-bold text-[#00b231]">
                   VENTAJA 0{idx + 1}
                 </div>
-                <h3 className="mt-2 font-heading text-lg font-bold text-[#f7fafc]">
+                <h3 className="mt-2 font-heading text-xl font-bold leading-snug text-[#f7fafc]">
                   {benefit.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#94a6b8]">
+                <p className="mt-2.5 text-base leading-relaxed text-[#94a6b8]">
                   {benefit.description}
                 </p>
               </div>
@@ -171,13 +171,13 @@ export default async function SolutionSegmentPage({
               <Link
                 key={other.slug}
                 href={`/soluciones/${other.slug}`}
-                className="flex items-center justify-between rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-5 hover:border-[#00b231]"
+                className="card-interactive flex items-center justify-between rounded-2xl border border-[#1b2a3d] bg-[#0e1724] p-6 hover:border-[#00b231]"
               >
                 <div>
-                  <div className="font-heading text-base font-bold text-[#f7fafc]">
+                  <div className="font-heading text-lg font-bold text-[#f7fafc]">
                     {other.title}
                   </div>
-                  <div className="mt-1 text-xs text-[#94a6b8]">
+                  <div className="mt-1 text-sm leading-relaxed text-[#94a6b8]">
                     {other.subtitle}
                   </div>
                 </div>
