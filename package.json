@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "lucide-react": "^0.460.0",
+    "motion": "^14.10.0",
     "mysql2": "^3.24.6",
     "next": "^15.1.0",
     "react": "^19.0.0",
